@@ -6,3 +6,9 @@
 2026-11-16 02:08:39 [REQUEST_START] provider=Grok direction=out
 2026-11-16 02:08:40 [REQUEST_RESPONSE] provider=Grok status=400
 2026-11-16 02:08:40 [OUT_TRANSLATION_FAILED] Gemini: HTTP 404: This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get-started). | Grok: HTTP 400
+2026-11-16 02:16:40 [BOOT] script file loaded; version=1.1.2
+2026-11-16 02:17:34 [READY] backend=true backendError= sampev=true mimgui=true effil=true requests=true
+2026-11-16 02:18:13 [BOOT] script file loaded; version=1.1.2
+2026-11-16 02:18:55 [READY] backend=true backendError= sampev=true mimgui=true effil=true requests=true
+2026-11-16 02:19:15 [OUT_QUEUED] queue=1 bytes=10
+2026-11-16 02:19:16 [REQUEST_START] provider=Gemini direction=out
