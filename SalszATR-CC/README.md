@@ -111,7 +111,7 @@ Read this README and the full script first. Keep files inside `SalszATR/`. Never
 
 ## 12. Version history
 
-- **v1.1.2 diagnostic build:** adds `moonloader/SalszATR-debug.log` with flushed checkpoints around outgoing queue, SA-MP hooks and `sampSendChat`; API keys are not logged. Hook errors are caught safely, outgoing hook errors fail closed, and Effil `cancelled` status is handled with the correct spelling. This build helps identify the crash boundary; it does not claim to fix an unobserved native crash.
+- **v1.1.2 diagnostic build:** adds `moonloader/SalszATR-debug.log` with flushed checkpoints for provider request start/response/error, outgoing queue, SA-MP hooks and `sampSendChat`; API keys are not logged. Hook errors are caught safely, outgoing hook errors fail closed, and Effil `cancelled` status is handled with the correct spelling. This build helps identify the crash boundary; it does not claim to fix an unobserved native crash.
 - **v1.1.1:** fix "Tidak ada response API": thread now returns plain status/body instead of a table (effil returns userdata, which failed the type check).
 - **v1.1:** audit fixes listed above.
 - **v1.0:** initial prototype.
