@@ -1,7 +1,7 @@
 # SalszATR
 
 **AI-assisted chat translator for MoonLoader / SA-MP 0.3.7 R1**
-Current version: **v1.1.2 (diagnostic build; live crash fix still NOT verified in-game)**
+Current version: **v1.1.3 (command-bypass diagnostics; native crash fix still NOT verified in-game)**
 
 > Keep each script in its own folder. This build lives in `SalszATR-CC/`.
 
@@ -111,6 +111,7 @@ Read this README and the full script first. Keep files inside `SalszATR/`. Never
 
 ## 12. Version history
 
+- **v1.1.3 diagnostic update:** adds an explicit `sampev.onSendCommand` pass-through so slash commands never enter the translation path; adds command/chat hook checkpoints and a short HTTP error-body excerpt (response only, no request headers or API keys) to diagnose the force-close boundary. This is a targeted diagnostic/safety change, not a verified native-crash fix; live GTA SA testing is still required.
 - **v1.1.2 diagnostic build:** adds `moonloader/SalszATR-debug.log` with flushed checkpoints for provider request start/response/error, outgoing queue, SA-MP hooks and `sampSendChat`; API keys are not logged. Hook errors are caught safely, outgoing hook errors fail closed, and Effil `cancelled` status is handled with the correct spelling. This build helps identify the crash boundary; it does not claim to fix an unobserved native crash.
 - **v1.1.1:** fix "Tidak ada response API": thread now returns plain status/body instead of a table (effil returns userdata, which failed the type check).
 - **v1.1:** audit fixes listed above.
