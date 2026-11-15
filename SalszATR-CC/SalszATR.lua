@@ -1,6 +1,6 @@
 script_name('SalszATR')
 script_author('SalszATR')
-script_version('1.1.1')
+script_version('1.1.2')
 
 require 'lib.moonloader'
 
@@ -72,6 +72,38 @@ local state = {
     lastBlockedNotice = 0,
     warnedEncoding = false,
 }
+
+-- Diagnostic log: GTA SA/moonloader/SalszATR-debug.log.
+-- Flush every entry so the last checkpoint survives a hard game crash.
+local function debugLog(tag, message)
+    local base = '.'
+    local okPath, workingDir = pcall(getWorkingDirectory)
+    if okPath and type(workingDir) == 'string' and workingDir ~= '' then
+        base = workingDir:gsub('[\\/]+$', '')
+    end
+
+    local line = os.date('%Y-%m-%d %H:%M:%S') .. ' [' .. tostring(tag) .. '] ' .. tostring(message or '')
+    line = line:gsub('[\r\n]+', ' ')
+
+    -- Never write configured API keys to the log.
+    for _, key in pairs({config.keys.gemini, config.keys.grok}) do
+        key = tostring(key or '')
+        if key ~= '' then
+            local escaped = key:gsub('([^%w])', '%%%1')
+            line = line:gsub(escaped, '[REDACTED]')
+        end
+    end
+
+    local file = io.open(base .. '\\SalszATR-debug.log', 'a')
+    if not file then file = io.open('SalszATR-debug.log', 'a') end
+    if file then
+        file:write(line, '\n')
+        file:flush()
+        file:close()
+    end
+end
+
+debugLog('BOOT', 'script file loaded; version=1.1.2')
 
 -- ---------------------------------------------------------------- helpers
 
@@ -271,7 +303,8 @@ local function jobResult(j)
             return true, {status = tonumber(a) or 0, body = tostring(b or '')}
         end
         return true, nil, tostring(a or 'thread tidak mengembalikan hasil (requests/ssl error?)')
-    elseif status == 'failed' or status == 'canceled' then
+    elseif status == 'failed' or status == 'cancelled' then
+        debugLog('HTTP_THREAD_END', 'status=' .. tostring(status) .. ' error=' .. tostring(serr or ''))
         return true, nil, 'HTTP thread ' .. status
     end
     if os.clock() > j.deadline then
@@ -383,11 +416,21 @@ local outQueue = {}
 local outCurrent = nil
 
 local function sendTranslated(text)
-    if not isSampAvailable() then return false end
+    if not isSampAvailable() then
+        debugLog('SEND_SKIPPED', 'SA-MP unavailable')
+        return false
+    end
+    if type(sampSendChat) ~= 'function' then
+        debugLog('SEND_ERROR', 'sampSendChat missing')
+        chat('Fungsi sampSendChat tidak tersedia.', 0xFFFF6666)
+        return false
+    end
     state.hookSeen = false
     state.translatedSend = true
+    debugLog('SEND_BEGIN', 'calling sampSendChat; bytes=' .. tostring(#text))
     local ok, err = pcall(sampSendChat, text)
     state.translatedSend = false
+    debugLog('SEND_RETURN', 'pcall=' .. tostring(ok) .. '; hookSeen=' .. tostring(state.hookSeen) .. (not ok and '; error=' .. tostring(err) or ''))
     if not ok then
         chat('sampSendChat gagal: ' .. tostring(err), 0xFFFF6666)
         return false
@@ -405,6 +448,7 @@ end
 local function finishOutgoing(translatedUtf8, provider, err)
     if not translatedUtf8 then
         state.lastError = tostring(err or 'Unknown error')
+        debugLog('OUT_TRANSLATION_FAILED', state.lastError)
         chat('GAGAL. Pesan asli TIDAK dikirim. ' .. state.lastError, 0xFFFF6666)
         return
     end
@@ -417,6 +461,7 @@ local function finishOutgoing(translatedUtf8, provider, err)
     elseif #text > CHAT_LIMIT then
         chat('Hasil terjemahan lebih dari ' .. CHAT_LIMIT .. ' byte. Pesan ditahan, tidak dikirim.', 0xFFFF6666)
     else
+        debugLog('OUT_TRANSLATION_OK', 'provider=' .. tostring(provider) .. ' bytes=' .. tostring(#text))
         state.sent = state.sent + 1
         chat('[' .. tostring(provider) .. '] ' .. text, 0xFF65D6FF)
         sendTranslated(text)
@@ -480,6 +525,7 @@ local function handleOutgoing(message)
     end
 
     outQueue[#outQueue + 1] = message
+    debugLog('OUT_QUEUED', 'queue=' .. tostring(#outQueue) .. ' bytes=' .. tostring(#message))
     chat('Menerjemahkan... pesan asli ditahan.', 0xFF9AA7B2)
     return false
 end
@@ -783,20 +829,36 @@ function main()
         chat('Library encoding tidak ada: huruf non-ASCII (ä, ñ, dll) bisa rusak.', 0xFFFFC857)
     end
 
-    chat('SalszATR v1.1.1 loaded. /str untuk menu, /tr status untuk status.')
+    debugLog('READY', 'backend=' .. tostring(state.ready) .. ' backendError=' .. tostring(state.backendError) .. ' sampev=' .. tostring(okSampev) .. ' mimgui=' .. tostring(okImgui) .. ' effil=' .. tostring(okEffil) .. ' requests=' .. tostring(okReq))
+    chat('SalszATR v1.1.2 loaded. /str untuk menu, /tr status untuk status.')
     while true do
         wait(50)
         local ok, err = pcall(tick)
-        if not ok then state.lastError = 'tick: ' .. tostring(err) end
+        if not ok then
+            state.lastError = 'tick: ' .. tostring(err)
+            debugLog('TICK_ERROR', state.lastError)
+        end
     end
 end
 
 if okSampev then
     function sampev.onSendChat(message)
-        return handleOutgoing(message)
+        local ok, result = pcall(handleOutgoing, message)
+        if not ok then
+            state.lastError = 'onSendChat: ' .. tostring(result)
+            debugLog('OUT_HOOK_ERROR', state.lastError)
+            pcall(chat, 'Error pada hook chat. Pesan ditahan agar tidak bocor.', 0xFFFF6666)
+            return false
+        end
+        return result
     end
 
     function sampev.onServerMessage(color, text)
-        return handleIncoming(color, text)
+        local ok, result = pcall(handleIncoming, color, text)
+        if not ok then
+            debugLog('IN_HOOK_ERROR', tostring(result))
+            return nil -- keep the original incoming line visible
+        end
+        return result
     end
 end
