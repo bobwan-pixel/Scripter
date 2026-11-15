@@ -1,0 +1,16 @@
+[general]
+enabled=true
+outgoing=true
+incoming=true
+target=0
+outStyle=0
+inStyle=0
+primary=0
+
+[keys]
+gemini=
+grok=
+
+[models]
+gemini=gemini-2.5-flash
+grok=grok-4.7
