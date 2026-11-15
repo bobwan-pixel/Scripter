@@ -1,7 +1,7 @@
 # SalszATR
 
 **AI-assisted chat translator for MoonLoader / SA-MP 0.3.7 R1**
-Current version: **v1.1 (audited & patched, still NOT verified in a live game session)**
+Current version: **v1.1.1 (audited & patched, still NOT verified in a live game session)**
 
 > Keep each script in its own folder. SalszATR lives in `SalszATR/`.
 
@@ -110,5 +110,6 @@ Read this README and the full script first. Keep files inside `SalszATR/`. Never
 
 ## 12. Version history
 
+- **v1.1.1:** fix "Tidak ada response API": thread now returns plain status/body instead of a table (effil returns userdata, which failed the type check).
 - **v1.1:** audit fixes listed above.
 - **v1.0:** initial prototype.

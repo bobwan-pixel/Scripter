@@ -1,6 +1,6 @@
 script_name('SalszATR')
 script_author('SalszATR')
-script_version('1.1')
+script_version('1.1.1')
 
 require 'lib.moonloader'
 
@@ -247,7 +247,8 @@ local function httpPost(url, headers, body, timeout, cb)
             local rq = require 'requests'
             local okR, res = pcall(rq.request, 'POST', u, a)
             if okR and type(res) == 'table' then
-                return true, {status = res.status_code, body = res.text or ''}
+                -- return plain values only (effil turns tables into userdata)
+                return true, tonumber(res.status_code) or 0, tostring(res.text or '')
             end
             return false, tostring(res)
         end)(url, {data = body, headers = headers, timeout = timeout})
@@ -264,10 +265,12 @@ local function jobResult(j)
     if not okS then return true, nil, tostring(status) end
     if serr then return true, nil, tostring(serr) end
     if status == 'completed' then
-        local okG, success, data = pcall(j.th.get, j.th)
+        local okG, success, a, b = pcall(j.th.get, j.th)
         if not okG then return true, nil, tostring(success) end
-        if success then return true, data end
-        return true, nil, tostring(data)
+        if success == true then
+            return true, {status = tonumber(a) or 0, body = tostring(b or '')}
+        end
+        return true, nil, tostring(a or 'thread tidak mengembalikan hasil (requests/ssl error?)')
     elseif status == 'failed' or status == 'canceled' then
         return true, nil, 'HTTP thread ' .. status
     end
@@ -657,7 +660,7 @@ local function setupImgui()
         function()
             imgui.SetNextWindowSize(imgui.ImVec2(520, 540), imgui.Cond.FirstUseEver)
             imgui.Begin('SalszATR  |  AI Translator', show)
-            imgui.TextColored(imgui.ImVec4(0.38, 0.82, 1.0, 1.0), 'SA-MP 0.3.7 R1  /  v1.1')
+            imgui.TextColored(imgui.ImVec4(0.38, 0.82, 1.0, 1.0), 'SA-MP 0.3.7 R1  /  v1.1.1')
             imgui.Text('Backend: ' .. backendText())
             imgui.Separator()
 
@@ -780,7 +783,7 @@ function main()
         chat('Library encoding tidak ada: huruf non-ASCII (ä, ñ, dll) bisa rusak.', 0xFFFFC857)
     end
 
-    chat('SalszATR v1.1 loaded. /str untuk menu, /tr status untuk status.')
+    chat('SalszATR v1.1.1 loaded. /str untuk menu, /tr status untuk status.')
     while true do
         wait(50)
         local ok, err = pcall(tick)
