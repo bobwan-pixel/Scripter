@@ -1,6 +1,6 @@
 script_name('SalszATR')
 script_author('SalszATR')
-script_version('1.1.2')
+script_version('1.1.3')
 
 require 'lib.moonloader'
 
@@ -103,7 +103,7 @@ local function debugLog(tag, message)
     end
 end
 
-debugLog('BOOT', 'script file loaded; version=1.1.2')
+debugLog('BOOT', 'script file loaded; version=1.1.3')
 
 -- ---------------------------------------------------------------- helpers
 
@@ -381,6 +381,11 @@ local function providerRequest(provider, direction, text, callback)
         if type(response) ~= 'table' then callback(nil, 'Tidak ada response API'); return end
         local status = tonumber(response.status) or 0
         debugLog('REQUEST_RESPONSE', 'provider=' .. tostring(provider) .. ' status=' .. tostring(status))
+        if status < 200 or status >= 300 then
+            -- Keep a short response excerpt for diagnosis; never log request headers or API keys.
+            local excerpt = tostring(response.body or ''):gsub('[\\r\\n]+', ' '):sub(1, 500)
+            debugLog('HTTP_ERROR_BODY', 'provider=' .. tostring(provider) .. ' body=' .. excerpt)
+        end
         if status < 200 or status >= 300 then
             local detail = 'HTTP ' .. tostring(status)
             local data = parseJson(response.body)
@@ -712,7 +717,7 @@ local function setupImgui()
         function()
             imgui.SetNextWindowSize(imgui.ImVec2(520, 540), imgui.Cond.FirstUseEver)
             imgui.Begin('SalszATR  |  AI Translator', show)
-            imgui.TextColored(imgui.ImVec4(0.38, 0.82, 1.0, 1.0), 'SA-MP 0.3.7 R1  /  v1.1.1')
+            imgui.TextColored(imgui.ImVec4(0.38, 0.82, 1.0, 1.0), 'SA-MP 0.3.7 R1  /  v1.1.3')
             imgui.Text('Backend: ' .. backendText())
             imgui.Separator()
 
@@ -836,7 +841,7 @@ function main()
     end
 
     debugLog('READY', 'backend=' .. tostring(state.ready) .. ' backendError=' .. tostring(state.backendError) .. ' sampev=' .. tostring(okSampev) .. ' mimgui=' .. tostring(okImgui) .. ' effil=' .. tostring(okEffil) .. ' requests=' .. tostring(okReq))
-    chat('SalszATR v1.1.2 loaded. /str untuk menu, /tr status untuk status.')
+    chat('SalszATR v1.1.3 loaded. /str untuk menu, /tr status untuk status.')
     while true do
         wait(50)
         local ok, err = pcall(tick)
@@ -848,7 +853,22 @@ function main()
 end
 
 if okSampev then
+    -- Commands have their own SAMP.Lua event. Always pass them through untouched.
+    -- Do not route slash commands through the translation queue.
+    function sampev.onSendCommand(command)
+        debugLog('COMMAND_BYPASS', 'onSendCommand received; command=' .. tostring(command):sub(1, 80))
+        return nil
+    end
+
     function sampev.onSendChat(message)
+        -- Do not log chat contents; only record whether this is a slash command.
+        local isCommand = type(message) == 'string' and message:sub(1, 1) == '/'
+        if isCommand then
+            debugLog('COMMAND_BYPASS', 'slash command reached onSendChat; bypassed')
+            return nil
+        end
+
+        debugLog('CHAT_HOOK', 'onSendChat entered; type=' .. type(message))
         local ok, result = pcall(handleOutgoing, message)
         if not ok then
             state.lastError = 'onSendChat: ' .. tostring(result)
