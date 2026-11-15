@@ -330,6 +330,7 @@ local function pollJobs()
 end
 
 local function providerRequest(provider, direction, text, callback)
+    debugLog('REQUEST_START', 'provider=' .. tostring(provider) .. ' direction=' .. tostring(direction))
     local key, url, payload
     local headers = {['Content-Type'] = 'application/json'}
     local sys, usr = systemPrompt(direction), userPrompt(text)
@@ -372,9 +373,14 @@ local function providerRequest(provider, direction, text, callback)
     end
 
     httpPost(url, headers, body, HTTP_TIMEOUT, function(response, err)
-        if err then callback(nil, tostring(err)); return end
+        if err then
+            debugLog('REQUEST_ERROR', 'provider=' .. tostring(provider) .. ' error=' .. tostring(err))
+            callback(nil, tostring(err))
+            return
+        end
         if type(response) ~= 'table' then callback(nil, 'Tidak ada response API'); return end
         local status = tonumber(response.status) or 0
+        debugLog('REQUEST_RESPONSE', 'provider=' .. tostring(provider) .. ' status=' .. tostring(status))
         if status < 200 or status >= 300 then
             local detail = 'HTTP ' .. tostring(status)
             local data = parseJson(response.body)
