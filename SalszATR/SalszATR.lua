@@ -145,6 +145,11 @@ local function extractText(provider, body)
 end
 
 local function providerRequest(provider, prompt, callback)
+    if not okHttp or type(http) ~= 'table' or type(http.request) ~= 'function' then
+        callback(nil, 'Library effil_http belum terpasang atau tidak kompatibel')
+        return
+    end
+
     local key, url, payload, headers
     headers = {['Content-Type'] = 'application/json'}
 
@@ -464,21 +469,28 @@ function main()
         chat('Library samp.events tidak ditemukan. Install SAMP.Lua.')
         return
     end
-    if not okHttp then
-        chat('Library effil_http tidak ditemukan. Lihat README di folder SalszATR.')
-        return
-    end
+    -- Register commands before optional network-library checks.
+    -- This keeps /str and /tr available even when effil_http is missing.
+    setupImgui()
+    registerCommands()
+
     if not okImgui then
-        chat('Library mimgui tidak ditemukan. GUI tidak dapat dibuka.')
+        chat('mimgui belum terpasang. GUI /str belum tersedia, tetapi /tr tetap aktif.')
     end
+
     if type(encodeJson) ~= 'function' or type(decodeJson) ~= 'function' then
-        chat('Fungsi encodeJson/decodeJson MoonLoader tidak tersedia.')
+        chat('Fungsi encodeJson/decodeJson MoonLoader tidak tersedia. Fitur AI belum bisa digunakan.')
         return
     end
 
-    http.run(50)
-    setupImgui()
-    registerCommands()
+    if not okHttp or type(http) ~= 'table' or type(http.run) ~= 'function' then
+        chat('effil_http belum terpasang/kompatibel. Command /str dan /tr tetap aktif; fitur terjemahan menunggu library.')
+    else
+        local okRun, runErr = pcall(http.run, 50)
+        if not okRun then
+            chat('Gagal menjalankan effil_http: ' .. tostring(runErr))
+        end
+    end
 
     chat('SalszATR v1.0 loaded. /str untuk menu, /tr status untuk status.')
     while true do
