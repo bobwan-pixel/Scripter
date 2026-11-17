@@ -35,7 +35,7 @@ function drawHair(ctx,c){
  // Back mass and layered locks
  ctx.beginPath();ctx.moveTo(210,230);ctx.quadraticCurveTo(175,90,270,75);ctx.quadraticCurveTo(355,40,390,130);ctx.quadraticCurveTo(426,170,390,280);ctx.lineTo(370,315);ctx.lineTo(356,220);ctx.quadraticCurveTo(300,190,246,226);ctx.lineTo(226,306);ctx.closePath();fill(ctx,h);stroke(ctx,"#392a28",5);
  ellipse(ctx,240,145,48,57,mix(h,.08),-.55);ellipse(ctx,305,112,65,48,mix(h,.06),-.12);ellipse(ctx,361,145,42,54,h,.5);
- ctx.beginPath();ctx.moveTo(213,204);ctx.quadraticCurveTo(248,139,296,161);ctx.quadraticCurveTo(337,112,389,184);ctx.quadraticCurveTo(345,176,323,207);ctx.quadraticCurveTo(281,182,249,223);ctx.quadraticCurveTo(230,238,213,204);closePath();fill(ctx,mix(h,.05));stroke(ctx,"#392a28",4);
+ ctx.beginPath();ctx.moveTo(213,204);ctx.quadraticCurveTo(248,139,296,161);ctx.quadraticCurveTo(337,112,389,184);ctx.quadraticCurveTo(345,176,323,207);ctx.quadraticCurveTo(281,182,249,223);ctx.quadraticCurveTo(230,238,213,204);ctx.closePath();fill(ctx,mix(h,.05));stroke(ctx,"#392a28",4);
 }
 function drawBody(ctx,c,pose){
  const skin=c.skin, shirt=c.outfit, pants=c.pants, dark="#493b38";
@@ -60,15 +60,15 @@ function drawBody(ctx,c,pose){
  // arms, shoulders to hands
  ctx.save();
  if(pose==="wave"){
-  ctx.beginPath();ctx.moveTo(350,390);ctx.quadraticCurveTo(400,360,414,300);ctx.lineTo(432,240);ctx.lineTo(462,250);ctx.lineTo(445,330);ctx.quadraticCurveTo(435,400,382,438);closePath();fill(ctx,shirt);stroke(ctx,dark,5);
+  ctx.beginPath();ctx.moveTo(350,390);ctx.quadraticCurveTo(400,360,414,300);ctx.lineTo(432,240);ctx.lineTo(462,250);ctx.lineTo(445,330);ctx.quadraticCurveTo(435,400,382,438);ctx.closePath();fill(ctx,shirt);stroke(ctx,dark,5);
   mitten(ctx,448,226,-.15,skin,1.03);
-  ctx.beginPath();ctx.moveTo(250,395);ctx.quadraticCurveTo(206,435,202,520);ctx.lineTo(232,526);ctx.lineTo(272,430);closePath();fill(ctx,shirt);stroke(ctx,dark,5);mitten(ctx,211,535,0,skin);
+  ctx.beginPath();ctx.moveTo(250,395);ctx.quadraticCurveTo(206,435,202,520);ctx.lineTo(232,526);ctx.lineTo(272,430);ctx.closePath();fill(ctx,shirt);stroke(ctx,dark,5);mitten(ctx,211,535,0,skin);
  }else if(pose==="think"){
-  ctx.beginPath();ctx.moveTo(350,390);ctx.quadraticCurveTo(405,400,389,465);ctx.lineTo(350,450);closePath();fill(ctx,shirt);stroke(ctx,dark,5);mitten(ctx,375,450,-.8,skin);
-  ctx.beginPath();ctx.moveTo(250,390);ctx.quadraticCurveTo(205,400,225,470);ctx.lineTo(258,450);closePath();fill(ctx,shirt);stroke(ctx,dark,5);mitten(ctx,277,325,-.7,skin);
+  ctx.beginPath();ctx.moveTo(350,390);ctx.quadraticCurveTo(405,400,389,465);ctx.lineTo(350,450);ctx.closePath();fill(ctx,shirt);stroke(ctx,dark,5);mitten(ctx,375,450,-.8,skin);
+  ctx.beginPath();ctx.moveTo(250,390);ctx.quadraticCurveTo(205,400,225,470);ctx.lineTo(258,450);ctx.closePath();fill(ctx,shirt);stroke(ctx,dark,5);mitten(ctx,277,325,-.7,skin);
  }else{
-  ctx.beginPath();ctx.moveTo(250,390);ctx.quadraticCurveTo(205,400,205,505);ctx.lineTo(235,525);ctx.quadraticCurveTo(260,450,275,430);closePath();fill(ctx,shirt);stroke(ctx,dark,5);mitten(ctx,218,535,.08,skin);
-  ctx.beginPath();ctx.moveTo(350,390);ctx.quadraticCurveTo(395,400,395,505);ctx.lineTo(365,525);ctx.quadraticCurveTo(340,450,325,430);closePath();fill(ctx,shirt);stroke(ctx,dark,5);mitten(ctx,382,535,-.08,skin);
+  ctx.beginPath();ctx.moveTo(250,390);ctx.quadraticCurveTo(205,400,205,505);ctx.lineTo(235,525);ctx.quadraticCurveTo(260,450,275,430);ctx.closePath();fill(ctx,shirt);stroke(ctx,dark,5);mitten(ctx,218,535,.08,skin);
+  ctx.beginPath();ctx.moveTo(350,390);ctx.quadraticCurveTo(395,400,395,505);ctx.lineTo(365,525);ctx.quadraticCurveTo(340,450,325,430);ctx.closePath();fill(ctx,shirt);stroke(ctx,dark,5);mitten(ctx,382,535,-.08,skin);
  }
  ctx.restore();
 }
