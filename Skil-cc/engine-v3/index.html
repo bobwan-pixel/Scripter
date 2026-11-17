@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Skil-cc Character Studio v3</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><div><strong>SKIL-CC</strong><span>2D CHARACTER STUDIO · V3</span></div><p>Original explainer character builder</p></header>
+  <main>
+    <section class="stage-wrap">
+      <div class="stage-head"><div><b>Character Preview</b><small>Canvas 9:16 · live preview</small></div><button id="download">Export PNG</button></div>
+      <div class="stage"><canvas id="scene" width="600" height="900" aria-label="Character preview"></canvas></div>
+      <p class="hint">Preview dibuat dari bentuk 2D yang bisa dipakai ulang. Tangan sengaja berbentuk mitten tanpa jari.</p>
+    </section>
+    <aside class="controls">
+      <section><h2>Karakter</h2>
+        <label>Nama<input id="name" value="Character 01" maxlength="28"></label>
+        <label>Warna kulit<input id="skin" type="color" value="#e7b995"></label>
+        <label>Rambut<input id="hair" type="color" value="#593b32"></label>
+        <label>Pakaian<input id="outfit" type="color" value="#648b9c"></label>
+        <label>Warna celana<input id="pants" type="color" value="#394c63"></label>
+      </section>
+      <section><h2>Ekspresi</h2><div class="choices" id="expressions">
+        <button data-value="neutral" class="active">Netral</button><button data-value="happy">Senang</button><button data-value="sad">Sedih</button><button data-value="worried">Cemas</button><button data-value="surprised">Kaget</button><button data-value="angry">Marah</button>
+      </div></section>
+      <section><h2>Pose</h2><div class="choices" id="poses">
+        <button data-value="stand" class="active">Berdiri</button><button data-value="wave">Melambaikan</button><button data-value="talk">Menjelaskan</button><button data-value="think">Berpikir</button><button data-value="sit">Duduk</button>
+      </div></section>
+      <section><h2>Latar</h2><label>Warna latar<input id="background" type="color" value="#e9e4dc"></label><label class="check"><input id="showGround" type="checkbox" checked> Tampilkan bayangan lantai</label></section>
+      <section class="actions"><button id="randomize" class="secondary">Acak palet</button><button id="reset" class="secondary">Reset karakter</button><button id="downloadJson" class="secondary">Export data karakter</button></section>
+    </aside>
+  </main>
+  <footer>Skil-cc · Engine v3 · Vanilla HTML Canvas · No external library</footer>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
