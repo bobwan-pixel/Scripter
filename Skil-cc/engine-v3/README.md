@@ -15,6 +15,8 @@ Then open `http://localhost:8000`.
 - Original human-cartoon explainer character renderer.
 - Editable skin, hair, shirt, pants and background colors.
 - Four reusable starting presets: Bobwan Casual, Narrator, Student and Worker.
+- Adjustable character rig controls for head tilt, body lean, and independent arm rotation.
+- Rig values are validated, exported and restored with character JSON profiles.
 - Six facial expressions and five poses.
 - Rounded mitten hands with no individual fingers.
 - Subtle idle breathing and blinking with one shared animation loop.
@@ -32,4 +34,4 @@ Then open `http://localhost:8000`.
 Keep each character's JSON profile alongside its reference PNG. This creates a small reusable character library without spending AI generation credits.
 
 ## Limits
-This is a procedural 2D preview/composition engine, not a full skeletal animation editor or AI video generator. The current pose set is drawn from fixed shapes rather than a deformable bone rig. The engine is intentionally lightweight and does not modify the existing v2 ZIP archive.
+This is a procedural 2D preview/composition engine, not a full skeletal animation editor or AI video generator. The current rig uses transform pivots for the head, torso and arms. Legs and detailed joint deformation are still fixed-shape artwork, so this is an early 2D transform rig rather than a full skeletal editor. The engine is intentionally lightweight and does not modify the existing v2 ZIP archive.
