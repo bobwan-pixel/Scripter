@@ -1,3 +1,4 @@
+import {DEFAULT_RIG,normalizeRig} from "./rig.js";
 export const PRESETS = {
   bobwan: {
     name: "Bobwan Casual", skin: "#e7b995", hair: "#302b2b",
@@ -25,7 +26,7 @@ export function normalizeCharacter(input, fallback = PRESETS.bobwan) {
   const allowedExpressions = ["neutral", "happy", "sad", "worried", "surprised", "angry"];
   const allowedPoses = ["stand", "wave", "talk", "think", "sit"];
   const hex = value => typeof value === "string" && /^#[0-9a-f]{6}$/i.test(value);
-  const result = { ...fallback };
+  const result = { ...fallback, rig: normalizeRig(input?.rig ?? fallback.rig ?? DEFAULT_RIG) };
   if (input && typeof input === "object") {
     if (typeof input.name === "string") result.name = input.name.slice(0, 28);
     for (const key of ["skin", "hair", "outfit", "pants", "background"]) {
