@@ -29,6 +29,13 @@
       <section><h2>Pose</h2><div class="choices" id="poses">
         <button data-value="stand" class="active">Berdiri</button><button data-value="wave">Melambaikan</button><button data-value="talk">Menjelaskan</button><button data-value="think">Berpikir</button><button data-value="sit">Duduk</button>
       </div></section>
+      <section class="rig-controls"><h2>Character Rig</h2>
+        <label>Kemiringan kepala <output id="headTiltValue">0°</output><input id="headTilt" type="range" min="-25" max="25" value="0"></label>
+        <label>Lean badan <output id="bodyLeanValue">0°</output><input id="bodyLean" type="range" min="-12" max="12" value="0"></label>
+        <label>Lengan kiri <output id="leftArmValue">0°</output><input id="leftArm" type="range" min="-65" max="65" value="0"></label>
+        <label>Lengan kanan <output id="rightArmValue">0°</output><input id="rightArm" type="range" min="-65" max="65" value="0"></label>
+        <button id="resetRig" class="secondary">Reset rig</button>
+      </section>
       <section><h2>Latar</h2><label>Warna latar<input id="background" type="color" value="#e9e4dc"></label><label class="check"><input id="showGround" type="checkbox" checked> Tampilkan bayangan lantai</label></section>
       <section class="actions"><button id="randomize" class="secondary">Acak palet</button><button id="reset" class="secondary">Reset karakter</button><button id="downloadJson" class="secondary">Export data karakter</button><label class="file-import">Import profil JSON<input id="importJson" type="file" accept=".json,application/json"></label><small id="status" role="status">Pilih preset atau atur karakter sendiri.</small></section>
     </aside>
