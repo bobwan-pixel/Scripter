@@ -101,3 +101,6 @@ The lightweight browser composer is in `engine-v3/`.
 - Export a PNG reference and JSON character profile; import the JSON later to restore the same character setup.
 - Keep each character's PNG and JSON together as a reusable asset pair. Feed the PNG reference into a supported image/video generator to help preserve character identity.
 - The browser engine is a reusable design/preview tool, not a replacement for Google Flow, Dola, or a full rigged animation package.
+
+## Character rig controls
+The v3 browser studio includes an early transform rig with four saved controls: head tilt, torso lean, left arm rotation and right arm rotation. Use small angle changes for natural acting; large rotations can expose the fixed-shape limits of the current artwork. Rig values are included in exported JSON profiles. The legs remain fixed-shape in this first rig milestone.
