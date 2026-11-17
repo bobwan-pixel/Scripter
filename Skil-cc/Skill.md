@@ -91,3 +91,11 @@ Write prompts that can be adapted to Google Flow, Dola, or another image/video g
 - Motion/video prompt per shot.
 - Negative constraints.
 - Credit-saving note identifying reusable assets and what must actually be regenerated.
+
+
+## Local character preview engine
+The lightweight browser composer is in `engine-v3/`.
+- Open `engine-v3/index.html` in a modern browser, or run `python -m http.server 8000` inside that folder and open `http://localhost:8000`.
+- Use the composer to preview expressions, poses and palette variations before spending AI video credits.
+- Export a PNG reference and JSON character profile. Feed the reference into a supported image/video generator to help preserve character identity.
+- The browser engine is a reusable design/preview tool, not a replacement for Google Flow, Dola, or a full rigged animation package.
