@@ -16,6 +16,7 @@
     </section>
     <aside class="controls">
       <section><h2>Karakter</h2>
+        <label>Preset karakter<select id="preset"><option value="custom">Custom</option><option value="bobwan">Bobwan Casual</option><option value="narrator">Narrator</option><option value="student">Student</option><option value="worker">Worker</option></select></label>
         <label>Nama<input id="name" value="Character 01" maxlength="28"></label>
         <label>Warna kulit<input id="skin" type="color" value="#e7b995"></label>
         <label>Rambut<input id="hair" type="color" value="#593b32"></label>
@@ -29,7 +30,7 @@
         <button data-value="stand" class="active">Berdiri</button><button data-value="wave">Melambaikan</button><button data-value="talk">Menjelaskan</button><button data-value="think">Berpikir</button><button data-value="sit">Duduk</button>
       </div></section>
       <section><h2>Latar</h2><label>Warna latar<input id="background" type="color" value="#e9e4dc"></label><label class="check"><input id="showGround" type="checkbox" checked> Tampilkan bayangan lantai</label></section>
-      <section class="actions"><button id="randomize" class="secondary">Acak palet</button><button id="reset" class="secondary">Reset karakter</button><button id="downloadJson" class="secondary">Export data karakter</button></section>
+      <section class="actions"><button id="randomize" class="secondary">Acak palet</button><button id="reset" class="secondary">Reset karakter</button><button id="downloadJson" class="secondary">Export data karakter</button><label class="file-import">Import profil JSON<input id="importJson" type="file" accept=".json,application/json"></label><small id="status" role="status">Pilih preset atau atur karakter sendiri.</small></section>
     </aside>
   </main>
   <footer>Skil-cc · Engine v3 · Vanilla HTML Canvas · No external library</footer>
