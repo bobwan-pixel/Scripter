@@ -8,6 +8,7 @@ This upgrade replaces the old stickman-first direction with the visual target es
 - `Skill.md`: main production rules and workflow.
 - `STYLE-GUIDE.md`: character art direction and continuity locks.
 - `PROMPT-TEMPLATES.md`: reusable prompts for character sheets, scene stills, motion and short storyboards.
+- `engine-v3/`: browser-based 2D character preview studio with editable palettes, expressions, poses, PNG export and JSON profile export.
 
 ## Workflow
 1. Read Skill.md.
