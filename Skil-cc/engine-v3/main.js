@@ -2,7 +2,7 @@ import {drawCharacter} from "./character.js";
 import {idleOffset,blinkAt,drawBlink} from "./motion.js";
 const canvas=document.querySelector("#scene"),ctx=canvas.getContext("2d");
 const defaults={name:"Character 01",skin:"#e7b995",hair:"#593b32",outfit:"#648b9c",pants:"#394c63",background:"#e9e4dc",expression:"neutral",pose:"stand",showGround:true};
-const state={...defaults};let last=0,animate=true;
+const state={...defaults};
 const $=id=>document.getElementById(id);
 function roundedRect(x,y,w,h,r,color){ctx.beginPath();ctx.roundRect(x,y,w,h,r);ctx.fillStyle=color;ctx.fill();}
 function render(time=0){
@@ -16,10 +16,11 @@ function render(time=0){
  ctx.restore();
  // studio framing guides
  ctx.strokeStyle="#ffffff30";ctx.lineWidth=2;ctx.setLineDash([7,9]);ctx.strokeRect(36,36,528,828);ctx.setLineDash([]);
- if(animate)requestAnimationFrame(render);
+
 }
 function setValue(key,value){state[key]=value; if(key==="name")return; }
-["name","skin","hair","outfit","pants","background"].forEach(key=>$(key).addEventListener("input",e=>{setValue(key,e.target.value);if(key==="background")render();}));
+["name","skin","hair","outfit","pants","background"].forEach(key=>$(key).addEventListener("input",e=>{setValue(key,e.target.value);if(key==="background")render();
+requestAnimationFrame(function loop(t){render(t);requestAnimationFrame(loop);});}));
 $("showGround").addEventListener("change",e=>{state.showGround=e.target.checked;render();});
 function bindChoices(id,key){$(id).querySelectorAll("button").forEach(btn=>btn.addEventListener("click",()=>{$(id).querySelectorAll("button").forEach(b=>b.classList.remove("active"));btn.classList.add("active");state[key]=btn.dataset.value;render();}));}
 bindChoices("expressions","expression");bindChoices("poses","pose");
