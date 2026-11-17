@@ -97,5 +97,7 @@ Write prompts that can be adapted to Google Flow, Dola, or another image/video g
 The lightweight browser composer is in `engine-v3/`.
 - Open `engine-v3/index.html` in a modern browser, or run `python -m http.server 8000` inside that folder and open `http://localhost:8000`.
 - Use the composer to preview expressions, poses and palette variations before spending AI video credits.
-- Export a PNG reference and JSON character profile. Feed the reference into a supported image/video generator to help preserve character identity.
+- Start from the Bobwan Casual, Narrator, Student or Worker preset, then customize it.
+- Export a PNG reference and JSON character profile; import the JSON later to restore the same character setup.
+- Keep each character's PNG and JSON together as a reusable asset pair. Feed the PNG reference into a supported image/video generator to help preserve character identity.
 - The browser engine is a reusable design/preview tool, not a replacement for Google Flow, Dola, or a full rigged animation package.
