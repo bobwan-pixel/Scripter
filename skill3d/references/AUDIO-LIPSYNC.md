@@ -1,46 +1,50 @@
-# Dialogue Audio and Lip-Sync
+# Dialogue Audio, Timing, and Lip-Sync
 
-## Authority
-The supplied dialogue audio is the timing authority. The supplied dialogue script is the wording and speaker reference. Neither is rewritten by Skill3D.
+## Source authority
 
-## Mapping
-Create a mapping of:
-- Audio file.
-- Speaker.
-- Scene/shot.
-- Dialogue line or range.
-- Start and end time.
-- Confidence/notes.
+- Dialogue script = exact words and speaker labels.
+- Dialogue audio = actual voice, delivery, pauses, timing, and duration.
+- Animation script = visual events and intended performance.
 
-If a clip cannot be mapped unambiguously, ask the user.
+Do not create or rewrite dialogue/audio. Never replace the user's recording with generated speech. If the text and audio differ, preserve both and report the exact conflict.
 
-## Alignment
-1. Read audio metadata.
-2. Measure exact duration.
-3. Run speech-to-text timestamps if available, using the user's script as the transcript reference.
-4. Otherwise detect speech segments and align script phrases to segments.
-5. Review ambiguous boundaries manually.
-6. Convert timecodes to frame numbers using project FPS.
+## Timing pipeline
 
-## Visemes
-Use a practical viseme set, for example:
-- Rest/closed.
-- MBP (closed lips).
-- FV (teeth on lower lip).
-- Wide vowels.
-- Open vowels.
-- Rounded vowels.
-- Tongue/teeth shapes where the rig supports them.
+1. Inspect audio with `tools/audio_probe.py` / FFprobe.
+2. Keep originals unchanged in `input/audio/`.
+3. Match each clip to a speaker, scene, and line.
+4. Prefer word/phoneme timestamps from an installed speech recognizer.
+5. Otherwise use waveform energy, silence segmentation, phrase alignment, and manual review.
+6. Convert seconds to frames using the project's actual FPS.
+7. Preserve pauses, breaths, overlaps, hesitations, and natural delivery.
 
-Map phoneme intervals to mouth controls. Add jaw motion and subtle cheek/brow motion. Do not animate lips only by opening and closing the jaw.
+The script helps identify words and speakers; the recording determines when the mouth moves. Do not estimate audio duration from word count alone.
 
-## Timing rules
-- Preserve silence and pauses.
-- Keep breaths and natural delivery.
-- Do not time-stretch or cut dialogue.
-- Do not move a line to another character.
-- Listening characters should not visibly mouth the active speaker's words.
-- Check sync by watching rendered frames while listening to the original audio.
+## Viseme model
 
-## Missing tools
-If phoneme extraction or automatic lip-sync is unavailable, use script/audio timestamps to build a best-effort viseme track and disclose that it is approximate. Never label approximate sync as perfect.
+Use a compact practical set:
+- REST: relaxed/closed neutral.
+- MBP: lips closed for M/B/P.
+- FV: lower lip against upper teeth.
+- A: open jaw.
+- E/I: wide/front vowel.
+- O/U: rounded/pursed vowel.
+- L/TH: tongue/teeth shape if the model supports it.
+
+Blend jaw opening with lip shape. A single jaw flap is not sufficient lip-sync. Add subtle cheek/brow/head performance only when it matches the script and recorded delivery.
+
+## Automation and honesty
+
+- If phoneme recognition is available, create timed phoneme/viseme events.
+- If only word timestamps are available, map words to approximate viseme sequences and mark the result as approximate.
+- If only phrase/silence alignment is available, use phrase-level mouth movement and disclose the lower precision.
+- Never claim perfect sync without checking the rendered face alongside the original audio.
+- Use `tools/blender/apply_visemes.py` for a prepared viseme-event JSON track on a compatible Blender mouth shape-key object.
+
+## Audio mix
+
+- Preserve the original dialogue stem and timing.
+- Do not add music or SFX unless supplied or explicitly approved.
+- Keep dialogue intelligible and avoid clipping.
+- Mux audio only after picture frames are complete.
+- Verify final audio duration and stream presence with FFprobe.
