@@ -1,0 +1,25 @@
+name: Skill3D checks
+
+on:
+  push:
+    branches: [cc-v4-full3d]
+    paths:
+      - "skill3d/**"
+      - ".github/workflows/skill3d-checks.yml"
+  pull_request:
+    paths:
+      - "skill3d/**"
+      - ".github/workflows/skill3d-checks.yml"
+
+jobs:
+  python-static-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Compile Skill3D Python tools
+        run: python -m compileall -q skill3d/tools skill3d/tests
+      - name: Run Skill3D contract tests
+        run: python -m unittest discover -s skill3d/tests -v

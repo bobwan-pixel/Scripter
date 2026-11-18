@@ -1,21 +1,24 @@
-# Prompt Templates v3
+# SKIL-CC Production Prompt Templates
 
-## 1. Character reference sheet
-Create an original full-body 2D human cartoon explainer character in the supplied visual reference's broad style. Use softly rounded shapes, natural slightly stylized human proportions, a readable face with simple small eyes and restrained nose/mouth, voluminous layered hair, recognizable simple clothing, clean outlines, gentle shading and subtle highlights. Show front, 3/4 and side views plus a small expression row. Keep the same face, hairstyle, body proportions and outfit in every view. Hands are simple rounded mitten/oval shapes with no individual fingers. Plain uncluttered background, full body visible, consistent scale. Do not imitate any exact existing character or logo.
+Use these templates only after reading the active screenplay and character/world files. Replace bracketed fields with source-supported details. Never invent canon.
 
-## 2. Scene still
-Use the approved character reference without redesigning the character. Show [ACTION] at [LOCATION] with [IMPORTANT PROPS]. Match the same soft-shaded 2D human cartoon explainer style, proportions, face, layered hair, outfit, outline weight and palette. Compose as a vertical 9:16 frame with [CAMERA SHOT]. Keep the hands as simple rounded mittens without fingers. Background has gentle depth and remains visually secondary.
+## Full-film production
+Read all active project files. Preserve dialogue exactly. Create a 5–10 minute full-3D film plan with causal beat sheet, scene timings, shot list, camera, animation, lighting, VFX and sound cues. Every visible character, prop, environment and effect must be 3D. Report missing source details instead of fabricating them.
 
-## 3. Image-to-video motion
-Animate the supplied frame while preserving the exact character design, face, hairstyle, outfit, proportions, colors and background layout. The character [MOTION] with natural restrained movement: [GESTURE], [FACIAL CHANGE], subtle breathing and blinking. Keep rounded mitten hands with no fingers. Use a stable camera [CAMERA MOVE]. Smooth continuous motion, no morphing, no flicker, no new objects, no extra limbs, no redesign.
+## Character model
+Create original full-3D character [ID] using the exact approved appearance, proportions, hair, clothing, colours and accessories from CHARACTERS.md. Produce front, side, back and three-quarter views. Use a rig-ready neutral pose, clean topology, UVs, named materials and stable scale. Keep the established rounded mitten hands unless the bible says otherwise.
 
-## 4. Negative prompt
-stick figure, stickman, photorealistic, 3D render, chibi, anime redesign, hyper-detailed anatomy, individual fingers, five-finger hands, fingernails, knuckles, malformed hands, extra limbs, face drift, hairstyle drift, outfit changes, flicker, jitter, warped body, random camera movement, text, logo, watermark.
+## Environment
+Build the full-3D location [LOCATION ID] from WORLD.md. Include its actual architecture, terrain, vegetation, furniture, entrances, exits, story props and scale references. Keep all story-critical elements consistent.
 
-## 5. 10-second vertical short storyboard
-Create a 10-second 9:16 explainer sequence about [TOPIC].
-- 0-2s: [VISUAL HOOK]
-- 2-5s: [SETUP / ACTION]
-- 5-8s: [REVEAL / ESCALATION]
-- 8-10s: [PAYOFF / CLIFFHANGER]
-For every shot provide: duration, framing, visible action, narration/dialogue, image prompt and motion prompt. Reuse the same character and background assets where possible. Do not add filler shots.
+## Prop
+Create [PROP ID] as a reusable volumetric 3D asset with dimensions, material, origin, interaction points and contact surfaces. Follow the asset manifest.
+
+## Shot
+For [SCENE/SHOT ID], follow the screenplay action and dialogue verbatim. Specify shot size, lens, camera position/movement, blocking, eye targets, character performance, prop contact, lighting, VFX, audio and transition. Include start/end timecodes.
+
+## Animation
+Animate [CHARACTER ID] performing only the action specified in the screenplay. Define key poses, timing, weight shift, anticipation, contact, follow-through, facial acting, eye direction and recovery. Avoid floating feet, sliding hands and object intersections.
+
+## VFX and sound
+Define the physical cause, source, direction, scale, timing, interaction and fade for each effect. Place dialogue, ambience, Foley, designed effects, music and silence on the timeline with timecodes.

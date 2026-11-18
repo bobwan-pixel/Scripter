@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "title": "",
+  "status": "template",
+  "target_runtime_seconds": 300,
+  "minimum_runtime_seconds": 300,
+  "maximum_runtime_seconds": 600,
+  "fps": 24,
+  "resolution": {"width": 1920, "height": 1080},
+  "aspect_ratio": "16:9",
+  "render_engine": "Blender",
+  "output_format": "mp4",
+  "video_codec": "H.264",
+  "audio_sample_rate": 48000,
+  "style": "original stylized cinematic full 3D",
+  "all_visual_assets_must_be_3d": true,
+  "approved_dialogue_must_be_preserved": true
+}

@@ -1,6 +1,8 @@
-Skil-cc v3.0
+Skil-cc V4 — Full 3D film production skill.
 
-Main instructions: read Skill.md
-Visual rules: read STYLE-GUIDE.md
-Prompt templates: read PROMPT-TEMPLATES.md
-Overview: read README.md
+Canonical Claude Code entry point: ../.claude/skills/skil-cc-animation/SKILL.md
+Full workflow: SKILL.md
+Project sources: projects/active/
+Project index: PROJECT-INDEX.md
+
+Read the canonical SKILL.md and all active project source files before production.
