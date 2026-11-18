@@ -1,25 +1,27 @@
-# Skil-cc v3.0 — 2D Animated Explainer Short Kit
+# Skil-cc V4 — Full 3D Animation Production
 
-This upgrade replaces the old stickman-first direction with the visual target established by the reference screenshot: polished 2D human cartoon explainer characters, soft shading, layered hair and simple readable clothing.
+V4 changes the project from a 2D character preview tool into a full-3D animation production workflow.
 
-**Important hand rule:** rounded mitten/oval hands only. No individual fingers.
+## What's new
+- Characters, clothing, hair, props, locations and effects are intended to be volumetric 3D.
+- Story workflow is built around cause/effect, character motivation, escalation, climax and resolution.
+- Production is organized as film → scenes → shots → animation clips.
+- Default target is a complete 10-minute film with frame-accurate runtime planning.
+- Includes a lightweight Three.js 3D previs/blocking studio in engine-v4.
+- Previous engine-v3 is preserved as a legacy 2D studio.
 
 ## Files
-- `Skill.md`: main production rules and workflow.
-- `STYLE-GUIDE.md`: character art direction and continuity locks.
-- `PROMPT-TEMPLATES.md`: reusable prompts for character sheets, scene stills, motion and short storyboards.
-- `engine-v3/`: browser-based 2D character preview studio with editable palettes, expressions, poses, PNG export and JSON profile export.
+- Skill.md: production workflow and quality gates.
+- STYLE-GUIDE.md: 3D art direction and continuity.
+- PROMPT-TEMPLATES.md: model, rig, environment, prop, shot, animation and VFX briefs.
+- engine-v4/: browser 3D previs tool.
+- engine-v3/: legacy 2D character studio, retained for old projects.
 
-## Workflow
-1. Read Skill.md.
-2. Approve one character reference sheet.
-3. Lock character identity and outfit.
-4. Build a shot list before generating.
-5. Reuse character/background references and regenerate only what needs correction.
-6. Edit the generated clips into a vertical short.
+## Start
+From the repository root run: python -m http.server 8000
+Open http://localhost:8000/Skil-cc/engine-v4/
 
-## Compatibility
-Platform-neutral prompts can be adapted for Google Flow, Dola or another generator. Use reference-image features when the platform supports them; do not assume every platform has the same controls.
+## Important
+The browser studio is for 3D layout, rough blocking, basic character keyframes, GLB import and project JSON. It is not a complete Blender replacement and does not render a final 10-minute MP4. Use Blender for production modeling, rigging, animation, lighting and final rendering.
 
-## Copyright note
-The screenshot is a style reference only. Create original characters and assets; do not copy exact characters, logos or proprietary artwork.
+The supplied Stickman World Short Kit V2 is used for shot planning, easing, camera motion and production discipline. Its 2D character-card implementation is deliberately not used in V4.
