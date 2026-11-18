@@ -7,7 +7,7 @@ def probe(path):
  if r.returncode:raise RuntimeError(r.stderr.strip())
  d=json.loads(r.stdout);return float(d.get("format",{}).get("duration",0)),[s.get("codec_type") for s in d.get("streams",[])]
 def main():
- p=argparse.ArgumentParser();p.add_argument("--frames",required=True,help="frame filename pattern, e.g. renders/frames/frame_%04d.png");p.add_argument("--audio",required=True);p.add_argument("--output",default="output/final.mp4");p.add_argument("--fps",type=int,default=24);p.add_argument("--start-number",type=int,default=1);p.add_argument("--frame-count",type=int,required=True);p.add_argument("--crf",type=int,default=18);a=p.parse_args()
+ p=argparse.ArgumentParser();p.add_argument("--frames",required=True,help="frame filename pattern, e.g. renders/frames/frame_%%04d.png");p.add_argument("--audio",required=True);p.add_argument("--output",default="output/final.mp4");p.add_argument("--fps",type=int,default=24);p.add_argument("--start-number",type=int,default=1);p.add_argument("--frame-count",type=int,required=True);p.add_argument("--crf",type=int,default=18);a=p.parse_args()
  for t in ["ffmpeg","ffprobe"]:
   if not shutil.which(t):raise SystemExit(t+" not found")
  audio=Path(a.audio);out=Path(a.output);out.parent.mkdir(parents=True,exist_ok=True)
