@@ -1,115 +1,84 @@
 ---
-name: 2d-animated-explainer-short-kit
-version: 3.2.0
-description: Create short-form 2D animated explainer videos with consistent human cartoon characters, reusable scenes, and credit-efficient production.
+name: skil-cc-full-3d-animation-production
+version: 4.0.0
+description: Original full-3D animated stories with consistent characters, environments, props, cinematic cameras, effects, sound and a 10-minute production timeline.
 ---
 
-# 2D Animated Explainer Short Kit
+# SKIL-CC V4 — Full 3D Animation Production Engine
 
-## Primary visual target
+## Mission and visual standard
+Create original animated stories where every visible character, item of clothing, hairstyle, prop, location and effect is volumetric 3D geometry. No 2D character cards, sprites or billboard characters. Target a polished stylized 3D cartoon film look: appealing proportions, readable silhouettes, expressive faces, controlled PBR materials and cinematic lighting. Keep the project's preference for simple rounded mitten hands without separated fingers. Never copy another creator's exact characters, shots, dialogue or assets.
 
-Use the user's GitHub screenshot as the primary visual reference. Match its broad visual language closely: polished 2D human cartoon explainer animation, soft rounded shapes, expressive but simple faces, layered hair, recognizable clothing, gentle shading, clean silhouettes, and readable poses.
+The default target is a complete 10:00 film, not one ten-minute clip. Organize it as film → scenes → shots → animation clips.
 
-Do not default to stick figures, geometric mascots, chibi, anime, photorealism, or generic flat corporate vector art. Do not copy a specific existing character, logo, exact outfit, or proprietary asset. Create original characters in the same broad visual style.
+## Production roles
+1. Story Director: premise, cause/effect, motivation, stakes, escalation, climax and resolution.
+2. Character Director: character bible, 3D model brief, wardrobe, expressions, rig and continuity.
+3. World Builder: locations, architecture, terrain, props, scale and reusable sets.
+4. Animation Director: blocking, body mechanics, anticipation, follow-through, weight, contact, facial acting and lip sync.
+5. Cinematographer: shot sizes, lens, composition, camera path, focus and transitions.
+6. Lighting & VFX Director: motivated lighting, atmosphere, particles, weather and impact effects.
+7. Sound Director: dialogue, ambience, Foley, music, silence and timed cues.
+8. Editor & Continuity Supervisor: shot order, rhythm, screen direction, asset continuity and runtime.
+9. Technical Director: project structure, formats, rig validation, render settings and QA.
 
-### Character construction
-- Human cartoon proportions similar to the reference: natural, slightly stylized anatomy.
-- Rounded, appealing face; small simple eyes; restrained nose and mouth; clear brows.
-- Hair has volume and a few readable layers, not hundreds of strands.
-- Clothing has clear shapes, seams/folds only where they improve readability.
-- Soft, restrained shadows and highlights. Avoid plastic 3D gloss and harsh gradients.
-- Keep line weight, face scale, body proportions, palette, and shading consistent between shots.
-- Hands are simple rounded mitten/oval shapes. No individual fingers, fingernails, knuckles, or forced hand anatomy. Only add a thumb-like bump if a pose absolutely needs it.
-- Feet and shoes are simplified, with readable silhouettes.
+## Stage 1 — Story development
+Before assets, define premise, protagonist goal, obstacle, stakes, flaw, opposing force and world rules. Build a causal chain: every major event needs a believable trigger and consequence. Plant clues and objects before payoff. Give major characters an arc or clear dramatic function. The ending must follow from the climax.
 
-## Character consistency workflow
-Create a character reference sheet before scene generation. Lock:
-1. character ID and name;
-2. face shape, skin tone, eye and brow design;
-3. hairstyle, hair color and hair silhouette;
-4. body proportions and height relationship;
-5. signature outfit and color palette;
-6. front, 3/4 and side views;
-7. neutral, happy, worried, shocked, confused, angry and sad expressions;
-8. reusable standing, sitting, walking, pointing, holding and reaction poses.
+Flexible 10-minute pacing:
+- 00:00–00:45 opening image and hook.
+- 00:45–02:00 world, protagonist and goal.
+- 02:00–04:00 inciting incident and first attempts.
+- 04:00–06:30 escalation, complications and cost.
+- 06:30–08:30 crisis, decision and climax.
+- 08:30–09:30 consequence and resolution.
+- 09:30–10:00 final image or sting.
+These are targets, not rigid laws. Final runtime must match the requested duration.
 
-Never redesign a character between scenes. Change only the expression, pose, camera framing, or explicitly requested costume. Reuse the reference image and assets wherever the chosen generator supports references.
+## Stage 2 — Character bible and 3D models
+For each character define stable ID/name, age range and role, personality/desire/fear, relationships, height and proportions, face/eyes/brows/nose/mouth, skin material, modeled hair silhouette, outfit layers/materials/colours, shoes/accessories, front/side/back/three-quarter references, expressions, voice profile and rig requirements.
 
-## Animation direction
-Prefer readable, restrained motion:
-- idle breathing, blinking, head turns and small posture shifts;
-- simple walk cycles and clean starts/stops;
-- rounded mitten hands for pointing, holding and gesturing;
-- clear anticipation and follow-through;
-- stable body proportions and no shape-morphing;
-- camera moves only when they add meaning: wide, medium, close-up, slow push-in, pan or tracking.
-Avoid random limb movement, excessive bouncing, warped faces, extra limbs, finger generation, flicker, and uncontrolled camera motion.
+Lock identity before animation. Changes between shots may include pose, expression, lighting or camera, not model identity or costume without a story reason.
 
-## Scene and visual design
-- Use clean 2D illustrated backgrounds with a foreground, middle ground and background.
-- Keep props simple, reusable and correctly scaled.
-- Use soft ambient shading and consistent light direction.
-- Compose for vertical 9:16 by default; keep faces and important objects inside mobile-safe margins.
-- Use wide shots to establish place, medium shots for action, and close-ups for emotion or key information.
-- Background detail must support the story, not compete with the character.
+3D asset requirements:
+- Real meshes, not flat images. Prefer Blender source files and GLB delivery assets.
+- Clean topology, object names, origins, applied transforms and consistent scale.
+- Character meshes need a usable skeleton. Facial animation needs bones, shape keys or a documented control method.
+- Props need real dimensions, origins and contact points.
+- Validate normals, UVs, material links, textures and rig deformation.
 
-## Short-form storytelling
-For a 10-15 second clip:
-1. 0-2s: visual hook or unusual event;
-2. 2-6s: establish what is happening;
-3. 6-11s: reveal, escalation or meaningful action;
-4. final seconds: payoff, unanswered question, or transition to the next part.
+## Stage 3 — World and set design
+For each location define dimensions, scale reference, paths, architecture, terrain, foreground/midground/background geometry, hero props, time of day, weather, motivated light sources, entrances/exits, blocking zones and continuity notes. Never add props only to fill space.
 
-Do not force every clip into this exact rhythm if the story needs a different beat. Every shot must communicate a visible change. Avoid static talking heads and generic filler.
+## Stage 4 — Shot list and storyboard
+Every shot includes scene/shot ID, start time, duration, frame range, dramatic purpose, location, characters, action, dialogue, prop interaction, camera size/lens/position/movement, lighting, VFX, audio cues, transition and continuity notes. Use wide shots to establish geography, medium shots for interaction, close-ups for emotion and inserts for story-critical details. Preserve screen direction and eyelines.
 
-## Credit-saving rules
-1. Write the beat sheet and shot list before generating.
-2. Generate one character reference sheet and reuse it.
-3. Reuse backgrounds, props, poses and scene layouts.
-4. Regenerate only the element that is wrong, not the entire scene.
-5. Keep prompts structured and stable; change only scene-specific fields.
-6. Use still-image generation for design approval before image-to-video.
-7. Generate only the shots needed for the edit; avoid duplicate variations.
-8. Keep clips short and motion simple when a longer generation adds no story value.
-9. Maintain a continuity sheet for character, location, lighting, camera and timeline.
-10. Never spend credits trying to fix a prompt that has not been checked for contradictions.
+## Stage 5 — Animation
+Work in passes: layout/staging; key poses/timing; blocking; body mechanics/weight; facial acting/eye direction; contact/prop interaction/foot planting; anticipation/follow-through/overlap; secondary motion/polish. Characters look before reaching, shift weight before heavy movement, make contact before objects react, and recover after impacts. Avoid floating feet, sliding hands, intersecting props, sudden snaps and unmotivated loops. Blend reusable clips such as idle, walk, run, turn, sit, reach, grab and react. Align lip sync to final audio.
 
-## Prompt order
-[FORMAT / DURATION] + [VISUAL STYLE] + [CHARACTER IDENTITY] + [POSE / ACTION] + [LOCATION / PROPS] + [CAMERA] + [LIGHTING / COLOR] + [MOTION] + [CONTINUITY LOCKS] + [NEGATIVE CONSTRAINTS].
+## Stage 6 — Camera
+Specify lens/FOV, camera height/distance/angle, framing, focus target, movement path, speed, easing, settle and cut point. Camera motion must reveal information or support emotion. Avoid geometry clipping, abrupt zooms and unreadable moves.
 
-## Universal negative constraints
-No stick figures, no photorealism, no 3D render, no chibi proportions, no anime redesign, no extra fingers, no individually drawn fingers, no malformed hands, no extra limbs, no face drift, no hairstyle drift, no outfit drift, no flicker, no warped anatomy, no text artifacts, no logos or watermarks.
+## Stage 7 — Lighting and VFX
+Use motivated key/fill/rim and practical sources. Preserve direction/exposure between adjacent shots. Effects obey scene physics: dust follows impacts, smoke rises and disperses, rain interacts with surfaces, sparks originate at contact, debris carries momentum. Keep faces and important action visible.
 
-## Platform-neutral operation
-Write prompts that can be adapted to Google Flow, Dola, or another image/video generator. Do not assume a feature exists. If a platform supports reference images, seed/character references, start/end frames, or reusable assets, use them. If it does not, preserve consistency with explicit character descriptions and matching reference frames.
+## Stage 8 — Audio
+Create timed cues for dialogue, room tone, ambience, Foley, designed effects, music and intentional silence. Final approved voice recording is the timing master. Adjust shot timing to performance, not the reverse.
 
-## Required output for each video request
-- Story hook and concise narration/dialogue.
-- Shot-by-shot storyboard with duration.
-- Character and location continuity notes.
-- Image prompt per shot.
-- Motion/video prompt per shot.
-- Negative constraints.
-- Credit-saving note identifying reusable assets and what must actually be regenerated.
+## Stage 9 — 10-minute edit and render
+Build scenes → shots → clips. At 24 fps, 10:00 = 14,400 frames; at 30 fps = 18,000 frames. Track transitions and audio tails without extending runtime. Render playblasts, low-resolution lighting tests, then final frames. Render image sequences for crash recovery; assemble MP4 with approved frame rate and audio. Keep versioned project files, asset manifest, render settings and backups.
 
+## Required deliverables
+Logline/synopsis/cause-effect outline; character bible and 3D asset list; location and prop list; timed screenplay; scene breakdown and shot list; storyboard/animatic plan; rig/animation plan; camera, lighting, VFX and audio cue sheets; continuity checklist; render/export specification; QA report with passed checks and known limits.
 
-## Local character preview engine
-The lightweight browser composer is in `engine-v3/`.
-- Open `engine-v3/index.html` in a modern browser, or run `python -m http.server 8000` inside that folder and open `http://localhost:8000`.
-- Use the composer to preview expressions, poses and palette variations before spending AI video credits.
-- Start from the Bobwan Casual, Narrator, Student or Worker preset, then customize it.
-- Export a PNG reference and JSON character profile; import the JSON later to restore the same character setup.
-- Keep each character's PNG and JSON together as a reusable asset pair. Feed the PNG reference into a supported image/video generator to help preserve character identity.
-- The browser engine is a reusable design/preview tool, not a replacement for Google Flow, Dola, or a full rigged animation package.
+## Quality gates
+Story causality is clear; models/costumes remain consistent; every visible character, environment, prop and effect is volumetric 3D; rigs deform cleanly; contact and weight read; cameras avoid geometry; lighting and screen direction are continuous; dialogue/audio are timed; no missing textures, broken links or black frames; runtime/frame count match; audio is present and unclipped.
 
-## Character rig controls
-The v3 browser studio now includes Rig System v2:
-- Head tilt and torso lean.
-- Independent left/right shoulder rotation and elbow bend.
-- Independent left/right thigh rotation and knee bend.
-- Visible elbow and knee pivots with connected rounded limb segments.
-- Optional procedural walk cycle with alternating arm and leg swing.
-- Rig values are normalized and stored in exported JSON profiles.
-- Hands remain rounded, fingerless mitten shapes.
+## Engine boundaries
+The included engine-v4 is a lightweight browser-based 3D previs/blocking tool. It creates procedural 3D cartoon placeholders, supports GLB import, camera orbit, basic character transform keyframes on a 10-minute timeline and project JSON export. It is not a replacement for Blender, professional rigging or a full offline renderer. Use Blender for final mesh authoring, UVs, rigging, detailed animation, lighting and rendering. JSON export or a preview image is not a finished MP4.
 
-The studio now also includes a basic keyframe timeline: set duration, capture rig/pose/expression keyframes, scrub, play, pause, stop, and save/load the timeline in character JSON. Rig values interpolate smoothly between keys; pose and expression change at keyframe boundaries. This remains a lightweight preview editor, not a full inverse-kinematics, mesh-deformation, audio-sync, or video-rendering package.
+## Resource rules
+Prefer free/open tools and formats. Keep preview models low-to-mid poly, use LODs/instancing and render tests before full quality. A ten-minute 3D film can be demanding on low-end hardware; never promise render speed without testing. State which generated assets still need cleanup, retopology, rigging or manual animation. Never invent platform capabilities.
+
+## Reference policy
+The supplied Stickman World Short Kit V2 is a reference for production discipline, camera movement, shot planning, easing, audio cue timing and render QA. Its own README/Skill.md describe 2D character cards in a 3D world. CC V4 deliberately changes that: characters, world, props and effects must all be 3D. Do not inherit its prohibition on 3D characters or its flat character-card implementation.
