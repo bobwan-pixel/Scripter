@@ -1,0 +1,287 @@
+OUTBREAK: NXL-019
+SCRIPT ANIMASI PEMBUKAAN
+Durasi sasaran: ±10 menit
+Versi: REVISI 3
+
+ATURAN AUDIO
+- Hanya satu narator.
+- Tidak ada dialog lisan karakter.
+- Narasi yang dibacakan ada di file terpisah: dialog-narasi.txt.
+- Semua teks notifikasi di layar adalah tulisan visual, bukan dialog.
+- Jangan menambahkan informasi medis atau kronologi wabah di luar yang tertulis dalam naskah.
+
+ARAH VISUAL
+- Gaya realistis-sinematik sesuai kemampuan produksi.
+- Awal tenang dan akrab, lalu perlahan membangun kecemasan.
+- Fokus pembukaan adalah notifikasi pemerintah dan reaksi Hazel, bukan montage panjang kehidupan Hazel.
+- Jangan langsung memindahkan Hazel ke dunia mimpi saat membuka mata.
+- Perpindahan ke mimpi tidak terjadi di pembukaan ini; pembukaan berakhir saat Hazel membaca peringatan dan menyadari situasinya.
+
+ADEGAN 01 - PEMBUKA NARATOR (00:00-00:40)
+Lokasi: Montase kehidupan malam.
+
+VISUAL:
+- Layar hitam singkat, lalu identitas cerita "ceritagini" muncul.
+- Potong ke jalan kota, kendaraan lewat, rumah dengan lampu menyala, dan toko yang masih beraktivitas.
+- Jangan tampilkan kota spesifik, kehancuran, atau tanda wabah.
+
+KAMERA:
+- Wide shot jalan malam.
+- Potongan medium aktivitas kota.
+- Kamera stabil dan tenang.
+
+AUDIO:
+- Narator mengucapkan pembukaan persis dari file dialog-narasi.
+- Musik pembuka tipis, bernuansa dokumenter sinematik.
+
+ADEGAN 02 - HAZEL SETENGAH TERTIDUR (00:40-01:30)
+Lokasi: Kamar Hazel.
+
+VISUAL:
+- Hazel sudah berada di tempat tidur. Jangan habiskan waktu panjang memperlihatkan rutinitas belajarnya.
+- Ponsel berada di meja kecil atau dekat bantal.
+- Hazel terlihat setengah tertidur.
+- Ponsel bergetar dan layar menyala.
+- Munculkan notifikasi resmi pemerintah dengan antarmuka generik, tanpa logo instansi nyata.
+- Teks layar:
+  "PEMBERITAHUAN KESEHATAN MASYARAKAT"
+  "Otoritas kesehatan sedang menyelidiki sejumlah kasus penyakit menular baru."
+  "Masyarakat diminta mengikuti informasi resmi dan memperhatikan arahan kesehatan setempat."
+- Jangan tampilkan angka kasus, lokasi, gejala khusus, atau nama virus jika belum ditetapkan.
+
+AKSI:
+- Hazel bergerak karena getaran ponsel.
+- Ia membuka mata setengah sadar.
+- Meraih ponsel dan membaca notifikasi.
+- Ekspresinya berubah dari mengantuk menjadi fokus dan sedikit khawatir.
+- Ia membaca ulang pesan.
+
+KAMERA:
+- Close-up ponsel bergetar.
+- Close-up mata Hazel terbuka.
+- Over-the-shoulder memperlihatkan notifikasi.
+- Close-up ekspresi Hazel.
+
+AUDIO:
+- Narator menjelaskan notifikasi resmi.
+- Suara getaran ponsel jelas.
+- Musik mulai berubah menjadi lebih tegang.
+
+ADEGAN 03 - PERINGATAN PERTAMA (01:30-02:30)
+Lokasi: Kamar Hazel.
+
+VISUAL:
+- Hazel duduk bersandar di tempat tidur.
+- Ia membaca pemberitahuan sampai selesai.
+- Tampilkan teks notifikasi cukup lama agar terbaca.
+- Hazel membuka sumber pemberitahuan resmi melalui tampilan ponsel generik.
+- Jangan tampilkan artikel panjang atau informasi yang belum ditetapkan.
+
+AKSI:
+- Hazel mengusap wajah, mencoba menghilangkan kantuk.
+- Ia membaca ulang kalimat tentang penyelidikan penyakit menular baru.
+- Ia terdiam sejenak.
+- Jangan membuatnya langsung panik atau langsung mengetahui karakter virus.
+
+KAMERA:
+- Medium shot Hazel duduk.
+- Insert shot layar ponsel.
+- Close-up perubahan ekspresi.
+- Kamera diam sejenak saat Hazel mencerna informasi.
+
+AUDIO:
+- Narasi menjelaskan bahwa informasi awal masih terbatas.
+- Musik ditahan, jangan terlalu dramatis.
+
+ADEGAN 04 - APA YANG DIKETAHUI DAN BELUM DIKETAHUI (02:30-03:35)
+Lokasi: Kamar Hazel dan visual sisipan edukatif.
+
+VISUAL:
+- Hazel masih memegang ponsel.
+- Sisipkan ilustrasi umum: petugas kesehatan mencatat laporan, sampel laboratorium generik, dan peta titik kasus tanpa angka atau lokasi spesifik.
+- Visual bersifat ilustrasi proses umum, bukan klaim kejadian spesifik.
+- Jangan tampilkan prosedur laboratorium rinci.
+
+AKSI:
+- Hazel membaca informasi.
+- Potongan ilustrasi menunjukkan proses penyelidikan, bukan hasil final.
+
+KAMERA:
+- Close-up layar ponsel.
+- Transisi grafis sederhana ke catatan epidemiologi.
+- Kembali ke Hazel.
+
+AUDIO:
+- Narator menjelaskan perbedaan dugaan, petunjuk, dan bukti.
+- Jelaskan bahwa gejala mirip tidak otomatis berarti penyebabnya sama.
+- Jangan menyebut gejala khusus NXL-019.
+
+ADEGAN 05 - INFORMASI MENYEBAR (03:35-04:35)
+Lokasi: Beberapa rumah dan ruang publik.
+
+VISUAL:
+- Beberapa orang menerima notifikasi serupa.
+- Seseorang meneruskan pesan ke grup keluarga.
+- Orang lain membaca berita dari ponsel.
+- Tampilkan layar percakapan generik, tanpa nama atau data pribadi.
+- Satu layar memperlihatkan pesan berantai yang belum terverifikasi, tanpa klaim medis palsu spesifik.
+
+AKSI:
+- Tampilkan reaksi berbeda: serius, bingung, mengabaikan, dan mencari sumber resmi.
+- Jangan menggambarkan semua orang panik.
+
+KAMERA:
+- Montage close-up ponsel.
+- Medium shot reaksi warga.
+- Potongan cepat tetapi tetap terbaca.
+
+AUDIO:
+- Narator membahas arus informasi dan risiko kabar palsu.
+- Musik mulai menambah tekanan.
+
+ADEGAN 06 - PENYELIDIKAN KESEHATAN MASYARAKAT (04:35-05:45)
+Lokasi: Fasilitas kesehatan dan ruang kerja petugas.
+
+VISUAL:
+- Petugas kesehatan meninjau laporan kasus.
+- Tenaga medis memeriksa pasien dalam ilustrasi umum.
+- Petugas mencatat waktu munculnya gejala dan kemungkinan hubungan antarkasus.
+- Tampilkan peta atau bagan hubungan sederhana tanpa data spesifik.
+- Tidak ada diagnosis atau hasil laboratorium yang dibuat-buat.
+
+AKSI:
+- Petugas membandingkan catatan.
+- Sampel diberi label secara generik.
+- Tim bekerja tanpa dialog terdengar.
+- Fokus pada pengumpulan bukti.
+
+KAMERA:
+- Wide shot fasilitas kesehatan.
+- Insert shot catatan dan peta.
+- Medium shot petugas bekerja.
+- Close-up label sampel tanpa detail teknis prosedural.
+
+AUDIO:
+- Narator menjelaskan penyelidikan epidemiologi, pelacakan kontak, pemeriksaan, dan verifikasi bukti.
+
+ADEGAN 07 - HUKUM DAN TANGGUNG JAWAB PEMERINTAH (05:45-06:45)
+Lokasi: Kantor layanan publik dan fasilitas kesehatan.
+
+VISUAL:
+- Petugas pemerintah menyampaikan informasi resmi melalui konferensi pers tanpa suara dialog.
+- Tenaga kesehatan memasang pemberitahuan layanan.
+- Warga membaca aturan kesehatan di fasilitas umum.
+- Jangan tampilkan pasukan bersenjata atau lockdown total karena belum ditetapkan.
+
+AKSI:
+- Informasi disampaikan terbuka.
+- Petugas membantu warga memahami arahan.
+- Suasana tertib, bukan represif.
+
+KAMERA:
+- Wide shot konferensi pers tanpa audio langsung.
+- Insert shot pengumuman.
+- Medium shot warga membaca informasi.
+
+AUDIO:
+- Narator menjelaskan bahwa kebijakan darurat harus punya dasar hukum, tujuan jelas, batas kewenangan, dan pengawasan.
+- Tekankan bahwa hak warga tetap perlu dihormati.
+
+ADEGAN 08 - RUMAH SAKIT DAN KAPASITAS LAYANAN (06:45-07:35)
+Lokasi: Rumah sakit.
+
+VISUAL:
+- Rumah sakit masih beroperasi.
+- Tenaga medis bekerja.
+- Petugas memeriksa ketersediaan ruang dan perlengkapan.
+- Tampilkan pasien umum secara singkat, bukan rumah sakit yang sudah kolaps.
+- Jangan tetapkan jumlah pasien atau tingkat keparahan wabah.
+
+AKSI:
+- Petugas mengatur layanan.
+- Tenaga medis menyiapkan perlengkapan.
+- Pasien tetap menerima pelayanan.
+
+KAMERA:
+- Wide shot lorong rumah sakit.
+- Medium shot petugas.
+- Insert shot perlengkapan dan daftar persediaan.
+
+AUDIO:
+- Narator menjelaskan kapasitas rumah sakit dan dampak pada pasien lain jika layanan kewalahan.
+
+ADEGAN 09 - DAMPAK SOSIAL, KRIMINALITAS, DAN SURVIVAL (07:35-09:00)
+Lokasi: Toko, rumah, dan lingkungan warga.
+
+VISUAL:
+- Rak toko dengan kebutuhan sehari-hari.
+- Seseorang membeli kebutuhan secara wajar.
+- Potongan visual penipuan daring generik dan iklan obat palsu tanpa merek nyata.
+- Keluarga menyiapkan kebutuhan secukupnya.
+- Tampilkan air minum, makanan, obat rutin, alat kebersihan, dan daftar kontak darurat.
+- Jangan tampilkan aksi kriminal sebagai tutorial.
+
+AKSI:
+- Warga memeriksa informasi sebelum membeli.
+- Seseorang menolak meneruskan pesan yang belum jelas sumbernya.
+- Keluarga menata kebutuhan pokok secara wajar.
+- Tampilkan ketegangan sosial secara singkat tanpa konflik fisik.
+
+KAMERA:
+- Montage barang kebutuhan.
+- Close-up layar ponsel dengan peringatan penipuan generik.
+- Medium shot keluarga menyiapkan kebutuhan.
+- Wide shot lingkungan.
+
+AUDIO:
+- Narator menjelaskan penipuan, pemalsuan obat, pencurian, pemaksaan, dan konflik akibat kepanikan.
+- Narator menjelaskan prinsip survival dasar: air aman, makanan secukupnya, obat rutin, kebersihan, informasi resmi, dan komunikasi keluarga.
+- Tegaskan bahwa keadaan darurat bukan izin untuk melakukan kekerasan atau main hakim sendiri.
+
+ADEGAN 10 - KEMBALI KE HAZEL (09:00-09:40)
+Lokasi: Kamar Hazel.
+
+VISUAL:
+- Kembali ke Hazel yang masih duduk di tempat tidur.
+- Layar ponsel masih menampilkan pemberitahuan.
+- Hazel membaca ulang informasi, lalu menurunkan ponsel perlahan.
+- Ekspresinya kini benar-benar terjaga dan berpikir.
+- Buku tentang perkembangan virus boleh terlihat di meja sebagai latar, tetapi jangan memberi kesan buku itu membahas NXL-019.
+
+AKSI:
+- Hazel mengamati layar beberapa detik.
+- Ia melihat ke arah meja belajarnya.
+- Ia kembali menatap ponsel.
+- Tidak ada perpindahan ke dunia mimpi pada adegan ini.
+
+KAMERA:
+- Close-up layar ponsel.
+- Medium shot Hazel.
+- Close-up ekspresi.
+- Slow pull-back untuk menutup adegan.
+
+AUDIO:
+- Narator menghubungkan pengetahuan Hazel dengan ketidakpastian awal wabah.
+- Musik menahan ketegangan.
+
+ADEGAN 11 - PENUTUP PEMBUKAAN (09:40-10:00)
+Lokasi: Kamar Hazel dan layar judul.
+
+VISUAL:
+- Hazel masih terjaga.
+- Cut ke layar hitam.
+- Judul muncul: OUTBREAK: NXL-019.
+- Jangan tampilkan zombie, Demian, atau kehancuran besar pada pembukaan ini.
+
+AUDIO:
+- Narator menyampaikan kalimat penutup.
+- Musik berhenti tepat setelah judul selesai muncul.
+
+KONTINUITAS:
+1. Notifikasi pemerintah adalah pemicu Hazel terbangun dan menyadari ada penyakit menular baru.
+2. Hazel setengah tertidur saat menerima notifikasi. Ia tidak langsung berpindah ke mimpi.
+3. Notifikasi awal tidak mengungkap seluruh detail penyakit.
+4. Tidak ada gejala spesifik, angka kasus, lokasi wabah, cara penularan, atau klasifikasi mayat hidup yang ditetapkan di pembukaan ini.
+5. Penyelidikan kesehatan, hukum, kriminalitas, dan survival dijelaskan sebagai konteks edukatif umum.
+6. Jangan tampilkan Demian di pembukaan.
+7. Adegan mimpi dimulai pada bagian cerita berikutnya setelah transisi yang disetujui.
