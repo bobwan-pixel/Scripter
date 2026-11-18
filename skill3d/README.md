@@ -1,40 +1,36 @@
 # Skill3D
 
-Standalone Claude Code skill for producing polished 3D animation from user-provided source materials.
+Skill3D is an independent full-3D animation production skill for Claude Code. It lives beside `Skil-cc/` and does not depend on NXL-019 or any other film-specific project.
 
-## What the user provides
+## Core contract
 
-1. Animation script (scene and visual directions).
-2. Dialogue script.
-3. Dialogue audio files.
+The user supplies:
+- Animation script.
+- Dialogue script.
+- Dialogue audio.
 
-Skill3D does **not** author or rewrite these materials and does **not** generate replacement dialogue audio. It follows the supplied sources and synchronizes character performance and animation to the supplied audio.
+Claude does not write or rewrite those sources and does not generate replacement dialogue audio. Claude builds the 3D production around them: characters, rigs, props, environments, shot layouts, animation, lip-sync, lighting, rendering, and QA.
 
 ## Duration choices
 
-At the start of production Claude asks the user to choose one:
+At the beginning of a new production, Claude asks for one target:
 - 30–60 seconds
 - 1–5 minutes
 - 5–10 minutes
 
-## What Claude produces
+## Visual standard
 
-- Automatically created 3D characters, props, and environments.
-- Animated scenes and shots following the animation script.
-- Character performance and lip-sync aligned to supplied dialogue audio.
-- Final MP4.
-- Editable Blender project and reproducible production assets/scripts.
+Full 3D characters with volume, anatomy, expressive faces, designed hair, clothing, rigs, and facial controls. Full 3D props and environments. The supplied Stickman World Short Kit V2 is the production-workflow reference, not the final character-rendering method: its shot planning, deterministic frame timing, motion principles, contact sheets, audio handling, render resumption, and QA are useful; its 2D character cards are not used as Skill3D's final character system.
 
-## Run
+## Invoke
 
-From the repository root, start Claude Code and invoke:
-
+From the repository root:
 ```text
 /skill3d
 ```
 
-The invocable entry point is `.claude/skills/skill3d/SKILL.md`. Full production rules live in this directory's `SKILL.md`.
+Claude Code entry point: `.claude/skills/skill3d/SKILL.md`
 
-## Important
+Full production rules: `skill3d/SKILL.md`
 
-Blender must be installed and available to Claude Code for local 3D modeling, animation, and rendering. Skill3D must report missing tools or incomplete outputs honestly; it must not claim a film is complete until a final MP4 has been rendered and checked.
+Read the references and templates before beginning a project. Blender must be installed for full 3D modeling, rigging, animation, and rendering.
