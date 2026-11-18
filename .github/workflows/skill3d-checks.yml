@@ -31,6 +31,7 @@ jobs:
       - name: Install Blender and FFmpeg
         run: |
           sudo apt-get update
-          sudo apt-get install -y blender ffmpeg libegl1 libgl1
+          sudo apt-get install -y blender ffmpeg libegl1 libegl-mesa0 libgl1 libgl1-mesa-dri libglx-mesa0 libopengl0
+          ldconfig -p | grep -E 'libEGL.so.1|libGL.so.1'
       - name: Run real Blender modeling, viseme, render, and MP4 smoke test
         run: python3 skill3d/tests/blender_smoke.py
