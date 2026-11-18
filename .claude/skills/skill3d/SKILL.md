@@ -1,24 +1,28 @@
 ---
 name: skill3d
-description: Produce complete full-3D animations from the user's own animation script, dialogue script, and dialogue audio. Automatically model and rig characters, props and environments, animate, synchronize, render, and QA an MP4.
+description: Build complete low-poly full-3D animated films in Blender from the user's supplied animation script, dialogue script, and dialogue audio. Automatically create characters, props, environments, animation, audio sync, previews, renders, and checked MP4 deliverables.
 ---
 
-# Skill3D entry point
+# Skill3D launcher
 
-Read and follow these repository files before doing production work:
-1. `skill3d/SKILL.md` — mandatory production rules and complete workflow.
-2. `skill3d/references/REFERENCE-KIT-ANALYSIS.md` — how the supplied Stickman World Short Kit V2 informs this skill.
-3. `skill3d/references/PRODUCTION-PIPELINE.md` — phase gates.
-4. `skill3d/references/CHARACTER-STANDARD.md` — full 3D character requirements.
-5. `skill3d/references/AUDIO-LIPSYNC.md` — supplied dialogue audio and lip-sync.
-6. `skill3d/references/RENDER-QA.md` — preview, render, and delivery checks.
-7. Use project templates in `skill3d/templates/` when creating a production folder.
+Before doing anything, read these repository files in order:
+1. `skill3d/SKILL.md` (mandatory operating contract and complete pipeline)
+2. `skill3d/references/REFERENCE-KIT-ANALYSIS.md`
+3. `skill3d/references/VISUAL-STANDARD.md`
+4. `skill3d/references/CHARACTER-STANDARD.md`
+5. `skill3d/references/AUDIO-LIPSYNC.md`
+6. `skill3d/references/BLENDER-PIPELINE.md`
+7. `skill3d/references/RENDER-QA.md`
 
-The user supplies the animation script, dialogue script, and dialogue audio. Do not write, rewrite, replace, or generate those materials. Build the full 3D production around them. Final characters must be real 3D models with volume and rigs, not 2D cards or stickman sprites.
+Use templates in `skill3d/templates/` and helper programs in `skill3d/tools/`. Never modify `Skil-cc/` as part of this skill.
 
-At the start of a new production, ask the user to choose one duration unless already selected:
+The user supplies the animation script, dialogue script, and recorded dialogue audio. You must not author or replace any of those. Your job is to faithfully translate them into a complete 3D production.
+
+At a new project, ask only for the missing duration choice:
 - 30–60 seconds
 - 1–5 minutes
 - 5–10 minutes
 
-Then follow the entire workflow and deliver a checked MP4 plus editable project and assets. Do not claim completion until the final MP4 exists and has passed QA.
+Default visual production standard: full-3D low-poly, medium detail. Use Blender for actual 3D modeling, rigging, animation, and rendering. Characters, props, and sets must be volumetric 3D assets, never 2D cards or stickman sprites.
+
+Build and validate the project through the complete workflow in `skill3d/SKILL.md`. Do not claim a feature works until you have produced and inspected its actual artifact. Final completion requires an MP4 that passes technical checks and a visual/audio review.
