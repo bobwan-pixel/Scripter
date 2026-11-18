@@ -4,35 +4,33 @@ Repository for the author's scripts and experiments.
 
 ## Projects
 - `SalszATR-CC/`: SA-MP chat translation script.
-- `Skil-cc/`: repository-driven full-3D animation production skill for 5–10 minute films.
+- `Skil-cc/`: separate legacy/general animation skill project. Skill3D does not depend on it.
+- `skill3d/`: independent full-3D animation production skill.
 
-## Claude Code: Skil-cc
+## Claude Code: Skill3D
+
 Clone and open the repository locally:
 ```bash
 git clone https://github.com/bobwan-pixel/Scripter.git
 cd Scripter
 claude
 ```
-Then invoke:
-```text
-/skil-cc-animation
-```
 
-Project instructions are in `CLAUDE.md`; the invocable skill is `.claude/skills/skil-cc-animation/SKILL.md`. Claude should read the actual screenplay, dialogue and production files under `Skil-cc/projects/active/` before creating a production plan. See `Skil-cc/README.md`.
-
-A GitHub URL by itself does not execute scripts or expose a local Blender workspace. Claude Code needs the repository checked out in its workspace, or a connected filesystem/tool that exposes those files.
-
-
-## Claude Code: Skill3D
-
-`skill3d/` is a separate 3D animation production skill. Unlike a writing assistant, it expects the user to provide the animation script, dialogue script, and dialogue audio. Claude follows those sources, automatically creates 3D characters and props, animates and synchronizes scenes to the supplied audio, then renders an MP4.
-
-Invoke it from Claude Code with:
-
+Invoke:
 ```text
 /skill3d
 ```
 
-Full rules: `skill3d/SKILL.md`. The invocable entry point is `.claude/skills/skill3d/SKILL.md`.
+The user supplies the animation script, dialogue script, and dialogue audio. Skill3D creates full 3D characters, props, environments, animation, audio synchronization, previews, QA, and final MP4. It does not write or rewrite the user's source script/dialogue or generate replacement dialogue audio.
 
-This is separate from `Skil-cc/`; do not mix their instructions or project files.
+Choose one duration when prompted:
+- 30–60 seconds
+- 1–5 minutes
+- 5–10 minutes
+
+Read `skill3d/SKILL.md` and its `references/` and `templates/` directories for the full specification. The project bootstrap helper is:
+```bash
+python skill3d/tools/new_project.py "project-name" --root ./projects
+```
+
+Blender must be installed and available in Claude Code's workspace for full 3D modeling, rigging, animation, and rendering. A GitHub URL by itself does not execute Blender or expose a local filesystem.
