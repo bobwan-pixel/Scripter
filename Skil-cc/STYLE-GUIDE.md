@@ -1,26 +1,28 @@
-# Visual Style Guide v3
+# SKIL-CC V4 — Full 3D Visual Style Guide
 
 ## Target
-Match the supplied GitHub screenshot's broad art direction: polished, soft-shaded 2D human cartoon explainer characters. This is not stickman art. Keep the character original while matching the visual language.
+Original stylized 3D cartoon animation with film-like staging. Characters, clothing, hair, props and locations are actual volumetric 3D assets. Use appealing proportions, readable silhouettes, expressive acting, controlled materials and cinematic lighting.
 
-## Shape language
-- Rounded, friendly silhouettes with natural stylized human proportions.
-- Soft face shapes, small readable eyes, simple nose and mouth.
-- Hair built from a few large overlapping locks and clear outer silhouette.
-- Clothing uses simple recognizable construction and restrained folds.
-- Hands are rounded mitten/oval forms with no individual fingers.
-- Use clean outlines and subtle internal lines; do not over-detail.
+## Character shapes
+- Stylized human anatomy with consistent head/body proportions.
+- Faces must read in wide, medium and close-up shots.
+- Hair is modeled volume, not a flat image plane.
+- Clothing is separate geometry or fitted mesh with believable folds.
+- Hands may be smooth rounded 3D mittens without individual fingers.
+- Shoes and feet support planted contact and believable weight.
+- Each character has a distinct silhouette.
 
-## Rendering
-- 2D illustration, soft color transitions, subtle contact shadows and gentle highlights.
-- Muted or balanced colors; avoid neon palettes unless story-relevant.
-- Avoid flat stick-figure graphics, glossy 3D, photoreal skin, heavy texture and excessive gradients.
+## Materials
+Use PBR materials with moderate roughness and restrained specular response. Skin must not look metallic, wet or excessively glossy. Cloth, hair, leather, metal, glass and wood need distinct material response. Avoid noisy textures and extreme saturation. Maintain a coherent colour script.
 
-## Consistency locks
-Keep the same face, hair silhouette, skin tone, body proportions, outfit palette, line weight and shading from shot to shot. Build reusable character sheets, expression sheets and pose sheets.
+## Environments and props
+Build real 3D architecture, terrain, vegetation and furniture. Use correct scale references. Story-critical props need stable dimensions, pivot/origin and clear contact surfaces.
 
-## Composition
-Vertical 9:16 by default. Keep faces, hands and story props within safe margins. Backgrounds should have clear depth but remain quieter than the subject.
+## Lighting and camera
+Use motivated key, fill and rim lighting. Preserve direction across adjacent shots unless time or location changes. Use composition, lens and camera movement to control attention. Depth of field should clarify focus. Avoid camera clipping and random movement.
 
-## Hands
-Hands are intentionally simplified. Use rounded mitten shapes or smooth ovals. Do not draw five fingers, separate digits, nails or knuckles. Do not let the generator invent detailed hands.
+## Animation
+Use a clear line of action, anticipation, contact, follow-through, overlap and recovery. Plant feet during weight-bearing moments; avoid sliding. Keep hands attached to props during interaction. Facial acting and eye direction support dialogue. Blend clips cleanly.
+
+## Continuity and quality
+Lock model, face, hair, outfit, scale, materials, rig proportions and signature accessories. A frame should read without dialogue. A sequence should show cause/effect. A finished shot needs clean geometry, believable contact, purposeful camera, coherent lighting and no missing assets.
