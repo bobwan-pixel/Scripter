@@ -9,14 +9,14 @@ class Skill3DContractTests(unittest.TestCase):
 
     def test_user_sources_are_locked(self):
         skill = self.read("SKILL.md").lower()
-        self.assertIn("never", skill)
         self.assertIn("dialogue audio", skill)
         self.assertIn("do not", skill)
         self.assertIn("rewrite", skill)
 
-    def test_duration_choices_are_present(self):
+    def test_duration_intake_is_indonesian_and_has_three_choices(self):
         skill = self.read("SKILL.md")
-        for choice in ("30–60 seconds", "1–5 minutes", "5–10 minutes"):
+        self.assertIn("Mau durasi animasinya berapa?", skill)
+        for choice in ("30–60 detik", "1–5 menit", "5–10 menit"):
             self.assertIn(choice, skill)
 
     def test_visual_standard(self):
@@ -32,6 +32,7 @@ class Skill3DContractTests(unittest.TestCase):
             "tools/blender/build_lowpoly_character.py",
             "tools/blender/build_modern_ruins_blockout.py",
             "tools/blender/apply_visemes.py",
+            "tools/rhubarb_to_visemes.py",
             "tools/render_range.py",
             "tools/encode_mp4.py",
             "tools/video_qa.py",
