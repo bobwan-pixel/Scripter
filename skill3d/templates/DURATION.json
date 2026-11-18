@@ -5,7 +5,6 @@
   "fps": 24,
   "resolution": [1920, 1080],
   "aspect_ratio": "16:9",
-  "render_engine": "BLENDER_EEVEE_NEXT",
   "visual_style": "low-poly",
   "detail_level": "medium",
   "world_setting": "follow-user-script",
