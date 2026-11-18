@@ -1,57 +1,62 @@
-# Production Pipeline
+# Skill3D Production Pipeline
 
-## Phase 0 — Intake
-- Detect attached/source files.
-- Ask duration: 30–60 s, 1–5 min, or 5–10 min.
-- Confirm required source inputs are present.
-- Inspect hardware and installed tools.
+## Gate 0 — Intake
+- Detect already supplied source files before asking for anything.
+- Ask the duration choice: 30–60 seconds, 1–5 minutes, or 5–10 minutes.
+- Identify animation script, dialogue script, dialogue audio, and visual references.
+- Ask only for missing required items.
+- Detect Blender, FFmpeg, Python, disk, RAM, and render device.
 
-## Phase 1 — Source lock
-- Preserve user script, dialogue, and dialogue audio.
-- Create a source manifest and audio map.
-- Flag ambiguities; never fill them with invented story content.
+## Gate 1 — Lock source
+- Copy or reference originals without modifying them.
+- Create source manifest and audio metadata report.
+- Confirm speaker/clip mapping.
+- Record contradictions and missing information; do not invent story facts.
 
-## Phase 2 — Breakdown
-- Scene breakdown.
-- Shot list and frame ranges.
-- Character/prop/location asset manifest.
-- Continuity and screen-direction map.
-- Dialogue/audio cue map.
+## Gate 2 — Breakdown
+- Scene breakdown in supplied order.
+- Shot list with time/frame ranges, camera, blocking, action, expressions, props, lighting, and audio.
+- Asset manifest for characters, outfits, props, sets, and effects.
+- Continuity sheet for identity, wardrobe, prop state, screen direction, and location geography.
 
-## Phase 3 — Previsualization
-- Build proxy environment and proxy character rigs.
-- Block cameras, entrances, exits, positions, and major poses.
-- Render low-resolution playblast.
-- Verify every scripted action is represented.
+## Gate 3 — Previs
+- Build proxy 3D geometry and simple rigs.
+- Block camera, screen direction, entrances/exits, and action.
+- Render low-cost playblast and contact sheet.
+- Confirm every scripted beat is represented and no new story event was invented.
 
-## Phase 4 — Asset build
-- Model complete 3D characters.
-- Rig body, face, hands, and feet.
-- Model props and environments.
-- Create reusable materials and lighting setups.
-- Render turntables and expression tests.
+## Gate 4 — Asset creation
+- Model full 3D low-poly medium-detail characters.
+- Build reusable armatures and facial controls.
+- Model props with pivots and moving parts.
+- Build modular environments and reusable materials.
+- Create turntables and interaction tests.
+- Replace proxies before final render.
 
-## Phase 5 — Animation
-- Animate body and facial performance.
-- Align gestures and reactions to source dialogue.
-- Create phoneme/viseme cues from actual audio timing.
-- Verify contacts, balance, foot planting, and prop interaction.
+## Gate 5 — Performance and sync
+- Animate blocking, body mechanics, facial expression, and prop interactions.
+- Align mouth shapes to supplied audio.
+- Check speaker assignment, pauses, breaths, and timing.
+- Verify contact, balance, foot planting, and camera eyelines.
 
-## Phase 6 — Preview gate
-- Render a still from every shot.
-- Render transitions and critical actions.
-- Build a contact sheet.
-- Inspect character consistency, framing, clipping, and readability.
-- Fix before full render.
+## Gate 6 — Preview approval
+- Render key stills, transitions, contact sheet, and short full-quality sample.
+- Inspect identity, staging, action readability, lighting, clipping, lip-sync, and sound.
+- Resolve material defects before final render.
 
-## Phase 7 — Final render
-- Render in manageable frame ranges.
-- Save checkpoints and resume after interruption.
-- Preserve audio timing.
-- Encode MP4 only after all frames are present.
+## Gate 7 — Final render
+- Render Blender frames in manageable chunks.
+- Record frame ranges and logs.
+- Resume only missing/failed frames.
+- Do not mux until expected frames exist.
+- Keep a high-quality intermediate/master when storage permits.
 
-## Phase 8 — QA and delivery
-- Verify runtime, resolution, frame rate, codec, and audio.
-- Detect black/frozen frames and render errors.
-- Inspect final contact sheet.
-- Deliver MP4, editable project, assets, and QA report.
+## Gate 8 — Encode and QA
+- Encode MP4 H.264 + AAC with FFmpeg.
+- Check container, codecs, dimensions, FPS, duration, audio stream, black/frozen frames, and playback.
+- Inspect the final contact sheet and sample playback with audio.
+- Report any failed or approximate checks.
+
+## Gate 9 — Deliver
+- MP4, editable .blend, source project/scripts, assets, audio map, shot list, and QA report.
+- Report actual runtime, resolution, FPS, render engine, and known limitations.
