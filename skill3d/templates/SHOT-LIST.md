@@ -1,11 +1,9 @@
 # Shot List
 
-| Shot | Scene | Frames / Time | Location | Camera / Lens | Character blocking and action | Expression / gaze | Props | Lighting | Dialogue audio cue | Notes |
-|---|---|---|---|---|---|---|---|---|---|---|
-| 001 |  |  |  |  |  |  |  |  |  |  |
+| Shot | Scene | Start | End | Frames | Size/Lens | Camera | Characters/Blocking | Action/Expression | Props | Location/Light | Audio Cue | Continuity Notes |
+|---|---|---:|---:|---:|---|---|---|---|---|---|---|---|
+| SH001 | SC001 | 0.0 |  |  |  |  |  |  |  |  |  |  |
 
-Rules:
-- Preserve source scene order.
-- Every scripted action must map to one or more shots.
-- Never add story events or dialogue.
-- Use frame ranges derived from the selected FPS and source audio timing.
+- Preserve supplied scene order and actions.
+- Convert seconds to frames using project FPS.
+- Mark uncertain timings rather than inventing them.
