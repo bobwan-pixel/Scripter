@@ -1,25 +1,13 @@
-# Continuity
+# Continuity Ledger
 
-## Character appearance
-- Character:
-- Outfit:
-- Hair/accessories:
-- Current damage/state:
+## Character identity and wardrobe
+Record locked proportions, hair, face, outfit, footwear, accessories, and permitted changes.
 
-## Location
-- Scene:
-- Time of day:
-- Lighting:
-- Environment state:
+## Screen direction and geography
+Record entrances/exits, eyelines, camera axis, room/street layout, and relative positions.
 
-## Props
-| Prop | Initial state | Change in shot | Final state |
-|---|---|---|---|
+## Prop state
+Record who holds each prop and whether it is open, closed, carried, dropped, damaged, moved, or consumed.
 
-## Screen direction and eyelines
-- Camera side:
-- Character A:
-- Character B:
-
-## Unresolved continuity issues
-- None.
+## Scene state
+Record time of day, weather, lighting direction, environmental damage, and changes explicitly supported by the script.
