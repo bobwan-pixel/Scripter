@@ -231,10 +231,10 @@ The original audio controls the delivery and timing. The dialogue text controls 
 3. Prefer phoneme-level timing with the Rhubarb Lip Sync CLI when installed. For example: `rhubarb -r phonetic -f json -d dialogue.txt -o rhubarb.json voice.wav`. Use the supplied dialogue text file so recognition can be guided by the exact words.
 4. Convert Rhubarb output with `python skill3d/tools/rhubarb_to_visemes.py rhubarb.json --out production/visemes.json --fps 24`, then apply it in Blender with `python skill3d/tools/blender/apply_visemes.py`.
 5. If Rhubarb is unavailable, use `python skill3d/tools/audio_timing.py <audio-file> <dialogue-script> --out production/audio-timing` for word/phrase timing only. This fallback is approximate and is not phoneme recognition. Review the JSON against the original audio and manually refine mouth cues before claiming sync.
-4. Convert timing to frames using project FPS.
-5. Create viseme events from the actual recording.
-6. Apply events to Blender shape keys/facial controls. The included helper `tools/blender/apply_visemes.py` expects a JSON event track and a mouth mesh with compatible shape keys.
-7. Review the rendered face while listening to the original recording.
+6. Convert timing to frames using project FPS.
+7. Create viseme events from the actual recording.
+8. Apply events to Blender shape keys/facial controls. The included helper `tools/blender/apply_visemes.py` expects a JSON event track and a mouth mesh with compatible shape keys.
+9. Review the rendered face while listening to the original recording.
 
 Use at least REST, MBP, FV, A, E/I, O/U, and L_TH shapes where supported. Rhubarb mouth-cue mapping is an initial approximation; manually refine timing, coarticulation, jaw movement, and facial expression. A jaw flap alone is not adequate. Keep the correct character speaking; listeners must not mouth another speaker's line.
 
