@@ -31,7 +31,7 @@ def main():
         setup="import bpy; s=bpy.context.scene; s.render.resolution_x=320; s.render.resolution_y=180; s.render.resolution_percentage=100; s.render.fps=24; s.frame_start=1; s.frame_end=24; s.eevee.taa_render_samples=8 if hasattr(s,'eevee') else 8; print('ENV_CAMERA',bool(s.camera))"
         run([blender,"-b",str(env),"--python-expr",setup],"configure tiny render")
         prefix=str(d/"frames"/"frame_")
-        run(["python",str(ROOT/"tools/render_range.py"),str(env),"--blender",blender,"--start","1","--end","24","--chunk","12","--output",prefix],"render frames in chunks")
+        run(["python",str(ROOT/"tools/render_range.py"),str(env),"--blender",blender,"--start","1","--end","24","--chunk","12","--output",prefix,"--log-dir",str(d/"render-logs")],"render frames in chunks")
         wav=d/"dialogue-test.wav"
         run(["ffmpeg","-y","-f","lavfi","-i","sine=frequency=440:duration=1","-c:a","pcm_s16le",str(wav)],"create synthetic QA audio")
         video=d/"smoke.mp4"
