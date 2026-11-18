@@ -20,5 +20,7 @@ def main():
    block=keys[k];block.value=0;block.keyframe_insert("value",frame=max(1,st-1))
   keys[v].value=1;keys[v].keyframe_insert("value",frame=st);keys[v].keyframe_insert("value",frame=en);keys[v].value=0;keys[v].keyframe_insert("value",frame=en+2)
  bpy.context.scene.frame_end=max(bpy.context.scene.frame_end,round(max([float(e["end"]) for e in events],default=0)*fps)+3)
- print("SKILL3D_VISEMES_APPLIED",len(events),"events at",fps,"fps")
+ # Persist generated animation keys; without this save, Blender exits with the source file unchanged.
+ bpy.ops.wm.save_as_mainfile(filepath=bpy.data.filepath)
+ print("SKILL3D_VISEMES_APPLIED",len(events),"events at",fps,"fps; saved",bpy.data.filepath)
 if __name__=="__main__":main()
