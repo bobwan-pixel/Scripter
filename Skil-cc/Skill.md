@@ -1,6 +1,6 @@
 ---
 name: 2d-animated-explainer-short-kit
-version: 3.0.0
+version: 3.1.0
 description: Create short-form 2D animated explainer videos with consistent human cartoon characters, reusable scenes, and credit-efficient production.
 ---
 
@@ -103,4 +103,13 @@ The lightweight browser composer is in `engine-v3/`.
 - The browser engine is a reusable design/preview tool, not a replacement for Google Flow, Dola, or a full rigged animation package.
 
 ## Character rig controls
-The v3 browser studio includes an early transform rig with four saved controls: head tilt, torso lean, left arm rotation and right arm rotation. Use small angle changes for natural acting; large rotations can expose the fixed-shape limits of the current artwork. Rig values are included in exported JSON profiles. The legs remain fixed-shape in this first rig milestone.
+The v3 browser studio now includes Rig System v2:
+- Head tilt and torso lean.
+- Independent left/right shoulder rotation and elbow bend.
+- Independent left/right thigh rotation and knee bend.
+- Visible elbow and knee pivots with connected rounded limb segments.
+- Optional procedural walk cycle with alternating arm and leg swing.
+- Rig values are normalized and stored in exported JSON profiles.
+- Hands remain rounded, fingerless mitten shapes.
+
+This is still a lightweight 2D transform rig, not a full inverse-kinematics, mesh-deformation, or timeline animation editor. Use moderate joint angles to avoid exposing the limits of the procedural artwork.
