@@ -1,49 +1,48 @@
-# Render and Quality Assurance
+# Render, Encoding, and Quality Assurance
 
-## Before rendering
-- Confirm all scene files and linked assets resolve.
-- Confirm frame range has no gaps.
-- Confirm output FPS, aspect ratio, and resolution.
-- Confirm dialogue audio mapping and start/end times.
-- Confirm render engine and device are actually available.
-- Check disk space and estimate output size.
+## Preflight
+- Blender version and executable detected.
+- Render engine/device available.
+- Project opens in background mode.
+- All linked assets resolve.
+- Expected frame range is continuous.
+- Disk space is sufficient.
+- Dialogue clips and timeline mapping are verified.
 
-## Preview protocol
-- Low-resolution playblast for all shots.
-- Character turntable and rig test.
-- Still from the middle of each shot.
-- Stills at transitions, contact moments, and important expressions.
-- Contact sheet for visual inspection.
-- Short full-quality sample for final materials, lighting, and audio sync.
+## Preview gates
+1. Low-resolution playblast for all shots.
+2. Character turntable and rig deformation test.
+3. Prop contact test.
+4. Still from each shot and every important transition.
+5. Contact sheet inspection.
+6. Short full-quality render with final materials and audio sync.
 
-## Visual checks
-- No missing or duplicated frames.
-- No black frames, frozen spans, flicker, or sudden camera jumps.
-- No mesh intersections or broken deformation.
-- No foot sliding during planted contacts.
-- No floating props or incorrect hand contact.
-- No camera passing through geometry.
-- No unreadable faces or blocked action.
-- Consistent appearance, scale, outfit, lighting, and screen direction.
+## Visual QA
+- All scripted shots and actions exist in order.
+- Character identity, proportions, hair, outfit, and props remain consistent.
+- No missing, duplicated, floating, or intersecting objects.
+- No obvious foot sliding, limb snapping, broken deformation, or prop clipping.
+- Camera does not pass through geometry.
+- No unintended black, frozen, flickering, or missing frames.
+- Lighting, exposure, and colour are coherent between cuts.
+- Important faces and actions are readable at final resolution.
 
-## Audio checks
-- All dialogue clips accounted for.
-- Correct speaker and scene.
-- No clipping, distortion, or accidental silence.
-- Lip movement follows actual audio.
-- No changed dialogue wording or timing.
-- No unapproved music, SFX, or captions.
+## Audio QA
+- Every required clip is present and assigned correctly.
+- No changed/reordered/cut dialogue.
+- No accidental silence, clipping, distortion, or abrupt cutoff.
+- Lip-sync checked against the original recording.
+- Music/SFX only when user-supplied or approved.
 
-## Export
-Default: MP4 / H.264, 24 fps, 1920×1080, AAC audio. Use vertical 1080×1920 only when requested or established by the project. Keep a high-quality master if storage permits.
+## Technical output QA
+Use `tools/validate_mp4.py` and FFprobe:
+- MP4 opens and contains video and audio streams.
+- Runtime is within the selected duration range, allowing only a documented small tail/intro tolerance.
+- Dimensions and FPS match the project configuration.
+- H.264 video and AAC audio are present unless the user selected another format.
+- No zero-byte or truncated file.
+
+Technical checks cannot prove artistic quality or lip-sync accuracy. A human visual/audio review is still required.
 
 ## Delivery report
-Include:
-- MP4 path.
-- Runtime.
-- Resolution and FPS.
-- Number of scenes/shots.
-- Audio mapping and sync status.
-- Editable project path.
-- QA checks passed/failed.
-- Known limitations.
+List output paths, runtime, dimensions, FPS, scene/shot count, render engine, audio sync status (verified/approximate/not tested), technical QA, visual QA, and known limitations.
