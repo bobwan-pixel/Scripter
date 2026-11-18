@@ -1,0 +1,246 @@
+OUTBREAK: NXL-019
+DIALOG AUDIO MASTER
+STATUS: DRAFT 01 - PEMBUKAAN DAN PERTEMUAN HAZEL–DEMIAN
+
+CATATAN PRODUKSI:
+- Teks ini adalah dialog/narasi untuk produksi audio.
+- Nama karakter dalam tanda kurung siku adalah penanda pembicara, bukan bagian yang dibacakan.
+- Jangan membacakan judul, status, atau catatan produksi.
+- Gunakan tempo dramatis, natural, dan tidak berlebihan. Beri jeda pada kalimat yang mengandung tekanan emosional.
+- Detail gejala dan aturan biologis NXL-019 masih dalam tahap pengembangan.
+
+[NARATOR]
+Tidak semua mimpi dimulai ketika seseorang memejamkan mata.
+Sebagian dimulai dari sesuatu yang tertinggal di pikiran.
+Sebuah kalimat yang belum selesai.
+Sebuah pertanyaan yang belum terjawab.
+Atau ketakutan yang bahkan belum sempat kita kenali.
+
+[HAZEL]
+“Penularan virus tidak selalu terlihat sejak awal…”
+“Kadang, saat gejalanya muncul, semuanya sudah terlambat.”
+
+[NARATOR]
+Malam itu, Hazel kembali membaca catatannya.
+Buku virologi terbuka di atas meja. Beberapa halaman dipenuhi garis bawah dan tulisan kecil. Di antara semua istilah yang ia pelajari, ada satu nama yang terus mengganggu pikirannya.
+
+NXL-019.
+
+[HAZEL]
+“Apa sebenarnya yang terjadi pada tubuh seseorang… kalau infeksi ini sudah melewati batas yang bisa dijelaskan?”
+
+[NARATOR]
+Ia membaca satu baris terakhir.
+Lalu satu baris lagi.
+Matanya mulai berat. Pena terlepas dari jemarinya.
+Dan tanpa menyadarinya, Hazel tertidur.
+
+[NARATOR]
+Ketika membuka mata, ia tidak lagi berada di kamarnya.
+
+Angin dingin menyapu wajahnya. Langit berwarna kelabu. Jalanan dipenuhi kendaraan yang berhenti sembarangan. Kaca-kaca toko pecah. Tidak ada suara kota, tidak ada lalu lintas, tidak ada kehidupan yang biasanya memenuhi jalan.
+
+Hanya bunyi sirene yang terdengar jauh… lalu terputus.
+
+[HAZEL]
+“Ini… di mana?”
+
+[DEMIAN]
+“Kalau lo masih bisa berdiri, jangan diam di tengah jalan.”
+
+[HAZEL]
+“Siapa lo?”
+
+[DEMIAN]
+“Orang yang baru saja mencegah lo jadi sasaran.”
+
+[HAZEL]
+“Sasaran siapa? Apa yang terjadi di sini?”
+
+[DEMIAN]
+“Pertanyaan lo kebanyakan. Cari tempat berlindung dulu.”
+
+[HAZEL]
+“Gue nggak akan ikut orang asing begitu saja.”
+
+[DEMIAN]
+“Bagus. Berarti insting lo belum mati.”
+“Sekarang pakai insting itu buat menjauh dari jalan.”
+
+[NARATOR]
+Sebelum Hazel sempat menjawab, sebuah benturan terdengar dari balik mobil yang terbalik.
+Sesuatu bergerak di antara kendaraan.
+Gerakannya tidak teratur. Tubuhnya terseret, lalu mendadak berdiri dengan cara yang membuat Hazel mundur.
+
+[HAZEL]
+“Tunggu… itu orang?”
+
+[DEMIAN]
+“Jangan mendekat.”
+
+[HAZEL]
+“Dia terluka. Kita harus bantu.”
+
+[DEMIAN]
+“Lihat tangannya. Lihat cara dia bergerak.”
+“Itu bukan orang yang bisa kita dekati sembarangan.”
+
+[HAZEL]
+“Dia masih bergerak. Mungkin dia mengalami gangguan saraf, atau—”
+
+[DEMIAN]
+“Lo dokter?”
+
+[HAZEL]
+“Mahasiswa kedokteran.”
+
+[DEMIAN]
+“Berarti lo tahu kapan harus menolong dan kapan harus menjaga jarak.”
+
+[HAZEL]
+“Gue tahu orang sakit butuh pertolongan. Gue juga tahu kita nggak bisa menyimpulkan apa pun cuma dari penampilannya.”
+
+[DEMIAN]
+“Dan gue tahu suara sekecil apa pun bisa menarik sesuatu yang lebih banyak.”
+“Jadi, kalau lo mau menolong siapa pun, pertama-tama pastikan kita masih hidup.”
+
+[NARATOR]
+Sosok itu mengangkat kepalanya.
+Matanya tidak fokus. Napasnya terdengar berat dan patah-patah.
+Lalu ia menerjang.
+
+[DEMIAN]
+“LARI!”
+
+[NARATOR]
+Demian menarik lengan Hazel. Mereka berlari melewati deretan mobil, sementara suara benturan dan langkah-langkah yang tidak beraturan mulai bermunculan dari berbagai arah.
+
+[HAZEL]
+“Lepasin! Gue bisa lari sendiri!”
+
+[DEMIAN]
+“Kalau bisa, jangan tertinggal!”
+
+[HAZEL]
+“Berapa banyak mereka?”
+
+[DEMIAN]
+“Gue nggak tahu!”
+
+[HAZEL]
+“Lo bahkan nggak tahu apa yang sedang kita hadapi?”
+
+[DEMIAN]
+“Gue tahu satu hal. Kalau kita berhenti, kita mati!”
+
+[NARATOR]
+Mereka masuk ke sebuah bangunan kecil dan Demian segera menutup pintunya.
+Ia mendorong sebuah lemari ke depan pintu, lalu memberi isyarat agar Hazel tidak bersuara.
+
+Beberapa detik kemudian, sesuatu menghantam pintu dari luar.
+
+Sekali.
+Dua kali.
+Lalu berkali-kali.
+
+[HAZEL]
+“Ya Tuhan…”
+
+[DEMIAN]
+“Jangan bicara.”
+
+[HAZEL]
+“Mereka… mereka bukan sekadar orang yang kehilangan kendali.”
+
+[DEMIAN]
+“Lo pernah lihat yang seperti itu?”
+
+[HAZEL]
+“Belum. Tapi ada sesuatu yang salah.”
+“Cara mereka merespons suara… gerakan tubuhnya…”
+“Ini bukan kondisi yang bisa gue jelaskan sekarang.”
+
+[DEMIAN]
+“Bagus. Berarti untuk sekarang, jangan sok tahu.”
+
+[HAZEL]
+“Dan lo? Lo tahu apa?”
+
+[DEMIAN]
+“Gue tahu cara bertahan hidup.”
+“Gue tahu pintu ini nggak akan tahan lama.”
+“Dan gue tahu kita harus keluar sebelum mereka menemukan jalan masuk.”
+
+[HAZEL]
+“Terus kita mau ke mana?”
+
+[DEMIAN]
+“Tempat yang punya air, persediaan makanan, dan pintu yang bisa dikunci.”
+“Setelah itu baru kita cari tahu apa yang terjadi.”
+
+[HAZEL]
+“Gue perlu tahu penyebabnya. Kalau ini penyakit menular, setiap orang yang kita temui bisa jadi sumber paparan.”
+
+[DEMIAN]
+“Kalau begitu, mulai sekarang jangan sentuh apa pun tanpa alasan.”
+“Dan jangan percaya siapa pun hanya karena mereka terlihat masih manusia.”
+
+[NARATOR]
+Hazel menatap Demian.
+Ia tidak mengenal pria itu. Tidak tahu namanya beberapa menit sebelumnya. Tidak tahu apakah ia bisa dipercaya.
+
+Namun, di tengah kota yang runtuh, Demian adalah satu-satunya orang yang tampak memahami bahaya di sekeliling mereka.
+
+Di luar, suara hantaman mulai berhenti.
+Keheningan datang terlalu cepat.
+
+[HAZEL]
+“Kenapa mereka berhenti?”
+
+[DEMIAN]
+“Gue nggak tahu.”
+
+[NARATOR]
+Demian mendekati celah jendela.
+Di ujung jalan, beberapa sosok berdiri diam menghadap ke arah yang sama.
+Bukan ke arah bangunan itu.
+Melainkan ke arah suara sirene yang baru saja menyala kembali.
+
+[DEMIAN]
+“Kita keluar lewat belakang. Sekarang.”
+
+[HAZEL]
+“Kenapa? Apa yang lo lihat?”
+
+[DEMIAN]
+“Sesuatu yang lebih buruk dari yang tadi.”
+
+[NARATOR]
+Hazel mengambil napas panjang.
+Ia belum tahu nama penyakit yang sedang menghancurkan kota itu.
+Belum tahu berapa banyak orang yang sudah terinfeksi.
+Belum tahu apakah masih ada tempat yang aman.
+
+Ia hanya tahu satu hal.
+Malam yang seharusnya berakhir dengan tidur… baru saja berubah menjadi awal dari mimpi buruk yang tidak ia pahami.
+
+[HAZEL]
+“Nama lo siapa?”
+
+[DEMIAN]
+“Demian.”
+
+[HAZEL]
+“Gue Hazel.”
+
+[DEMIAN]
+“Senang kenal lo, Hazel.”
+“Sekarang bergerak. Perkenalan bisa dilanjutkan kalau kita masih hidup.”
+
+[NARATOR]
+Dan tanpa mereka sadari, pertemuan itu akan menjadi awal dari perjalanan panjang.
+Delapan tahun yang akan menguji pengetahuan, keberanian, kepercayaan, dan batas kemanusiaan mereka.
+
+Karena di dunia yang telah runtuh…
+bertahan hidup bukan berarti seseorang berhasil tetap hidup.
+Terkadang, itu berarti berjuang agar dirinya tidak kehilangan alasan untuk hidup.
