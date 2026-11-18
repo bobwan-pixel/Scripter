@@ -1,1 +1,1 @@
-audio_file,speaker,scene,shot,dialogue_reference,start_seconds,end_seconds,start_frame,end_frame,alignment_confidence,notes
+audio_file,speaker,scene,shot,dialogue_reference,start_seconds,end_seconds,confidence,notes
