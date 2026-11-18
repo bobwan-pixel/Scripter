@@ -217,9 +217,9 @@ Use purposeful shot sizes: wide for geography, medium for interaction, close-up 
 
 The original audio controls the delivery and timing. The dialogue text controls the exact wording and speaker reference.
 
-1. Inspect every audio file using `python skill3d/tools/audio_probe.py <files...>`.
+1. Inspect every audio file using `python skill3d/tools/audio_probe.py <files...>`. Generate a timing draft with `python skill3d/tools/audio_timing.py <audio-file> <dialogue-script> --out production/audio-timing`.
 2. Map clips to speakers and scenes. Ask only if mapping is ambiguous.
-3. Use available word/phoneme timestamps when installed. Otherwise detect speech/silence segments and align the supplied phrases; mark uncertain sections.
+3. Run `python skill3d/tools/audio_timing.py <audio-file> <dialogue-script> --out production/audio-timing` to generate word/phrase timing. It uses optional Whisper word timestamps or approximate silence + phrase alignment. Review the JSON against the original audio; mark approximate sections. Otherwise detect speech/silence segments and align the supplied phrases; mark uncertain sections.
 4. Convert timing to frames using project FPS.
 5. Create viseme events from the actual recording.
 6. Apply events to Blender shape keys/facial controls. The included helper `tools/blender/apply_visemes.py` expects a JSON event track and a mouth mesh with compatible shape keys.
