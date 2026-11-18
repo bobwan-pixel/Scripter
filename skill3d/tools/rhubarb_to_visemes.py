@@ -10,7 +10,7 @@ The mapping is a practical approximation. Review the mouth track against the act
 import argparse,json
 from pathlib import Path
 
-MAP={"A":"MBP","B":"E","C":"E","D":"A","E":"O","F":"U","G":"FV","H":"L_TH","X":"REST"}
+MAP={"A":"MBP","B":"TEETH","C":"E","D":"A","E":"O","F":"U","G":"FV","H":"L_TH","X":"REST"}
 
 def main():
     p=argparse.ArgumentParser()
