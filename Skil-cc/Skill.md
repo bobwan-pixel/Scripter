@@ -1,6 +1,6 @@
 ---
 name: 2d-animated-explainer-short-kit
-version: 3.1.0
+version: 3.2.0
 description: Create short-form 2D animated explainer videos with consistent human cartoon characters, reusable scenes, and credit-efficient production.
 ---
 
@@ -112,4 +112,4 @@ The v3 browser studio now includes Rig System v2:
 - Rig values are normalized and stored in exported JSON profiles.
 - Hands remain rounded, fingerless mitten shapes.
 
-This is still a lightweight 2D transform rig, not a full inverse-kinematics, mesh-deformation, or timeline animation editor. Use moderate joint angles to avoid exposing the limits of the procedural artwork.
+The studio now also includes a basic keyframe timeline: set duration, capture rig/pose/expression keyframes, scrub, play, pause, stop, and save/load the timeline in character JSON. Rig values interpolate smoothly between keys; pose and expression change at keyframe boundaries. This remains a lightweight preview editor, not a full inverse-kinematics, mesh-deformation, audio-sync, or video-rendering package.
