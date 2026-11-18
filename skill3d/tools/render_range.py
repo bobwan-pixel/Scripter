@@ -22,6 +22,9 @@ def main():
    log=logs/f"frames_{s:06d}_{e:06d}.log";cmd=[exe,"-b",str(blend),"-s",str(s),"-e",str(e),"-o",prefix,"-F",a.format,"-a"]
    print("RUN"," ".join(cmd))
    with log.open("w",encoding="utf-8") as out:r=subprocess.run(cmd,stdout=out,stderr=subprocess.STDOUT)
-   if r.returncode:raise SystemExit(f"Blender failed for {s}-{e}; inspect {log}")
+   if r.returncode:
+    tail=log.read_text(encoding="utf-8",errors="replace").splitlines()[-80:]
+    print("\\n".join(tail))
+    raise SystemExit(f"Blender failed for {s}-{e}; inspect {log}")
  print("RENDER_RANGE_COMPLETE",a.start,a.end)
 if __name__=="__main__":main()
