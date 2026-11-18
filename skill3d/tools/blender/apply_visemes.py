@@ -10,7 +10,7 @@ def main():
  with open(a.json,encoding="utf-8") as f:data=json.load(f)
  fps=float(data.get("fps",bpy.context.scene.render.fps));obj=bpy.data.objects.get(data.get("object","SK3D_Mouth"))
  if not obj or not obj.data.shape_keys:raise SystemExit("Target object or shape keys not found")
- keys=obj.data.shape_keys.key_blocks;valid={"REST","MBP","FV","A","E","I","O","U","L_TH"};missing=valid-set(keys.keys())
+ keys=obj.data.shape_keys.key_blocks;valid={"REST","MBP","TEETH","FV","A","E","I","O","U","L_TH"};missing=valid-set(keys.keys())
  if missing:raise SystemExit("Missing shape keys: "+", ".join(sorted(missing)))
  events=sorted(data.get("events",[]),key=lambda e:float(e["start"]))
  for ev in events:
