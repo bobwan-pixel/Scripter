@@ -32,7 +32,7 @@ def main():
  add(uv("Nose",(0,-.32,1.65),(.045,.055,.065),skin,8,5),"head")
  mouth=uv("SK3D_Mouth",(0,-.304,1.555),(.105,.025,.027),mouthmat)
  mouth.shape_key_add(name="Basis")
- for key,zs,xs in [("REST",.18,1),("MBP",.12,1),("FV",.32,.8),("A",2.2,1),("E",.8,1.25),("I",.55,1),("O",1.7,.72),("U",1.1,.62),("L_TH",1.25,.9)]:
+ for key,zs,xs in [("REST",.18,1),("MBP",.12,1),("TEETH",.28,1),("FV",.32,.8),("A",2.2,1),("E",.8,1.25),("I",.55,1),("O",1.7,.72),("U",1.1,.62),("L_TH",1.25,.9)]:
   kb=mouth.shape_key_add(name=key)
   for v in kb.data:v.co.x*=xs;v.co.z*=zs
  add(mouth,"head")
