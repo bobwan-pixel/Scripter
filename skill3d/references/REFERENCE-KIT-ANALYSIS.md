@@ -1,52 +1,58 @@
 # Reference Kit Analysis
 
-Source: user-supplied `stickman-world-short-kit-v2.zip`.
+Primary reference: user-supplied `stickman-world-short-kit-v2.zip` (16 files).
 
-## What the kit actually contains
+## Archive inventory
 
-The archive has 16 files:
-- `Skill.md`: 18 KB workflow and production instructions.
-- `engine/main.js`: Three.js renderer, stylized 3D world, toon materials, normal/depth pass, outlines, depth of field, cards, frame rendering.
-- `engine/paint.js`: deterministic procedural painted textures for wood, stone, moss, grass, and other surfaces.
-- `engine/motion.js`: easing, camera interpolation, idle motion, blink timing, walking, and quantization helpers.
-- `engine/stickman.js`: 2D cartoon character artwork drawn to transparent canvas cards.
-- `engine/roman.js`: 2D illustrated Roman characters and hand-drawn props/effects.
-- `tools/setup.sh`: creates a working project, copies engine and tools, provisions Three.js and Playwright.
-- `tools/timing.py`: voice duration, speech segmentation, optional Whisper word timestamps, phrase-to-segment dynamic-programming alignment.
-- `tools/render.mjs`: Playwright-driven deterministic frame capture.
-- `tools/sheet.py`: contact-sheet generation from rendered stills.
+- `Skill.md`: full production workflow and operating rules.
+- `engine/main.js`: Three.js scene renderer, world setup, materials, camera/render pipeline, post-processing, deterministic frame rendering.
+- `engine/paint.js`: procedural painted surface/material helpers.
+- `engine/motion.js`: easing, camera interpolation, idle motion, blinking, walking, and motion helpers.
+- `engine/stickman.js`: 2D stickman character drawing on transparent canvas.
+- `engine/roman.js`: 2D illustrated character/prop/effect drawing.
+- `tools/setup.sh`: project setup and dependency provisioning.
+- `tools/timing.py`: audio duration, speech segmentation, optional Whisper timestamps, and phrase-to-speech alignment.
+- `tools/render.mjs`: deterministic browser-driven frame capture.
+- `tools/sheet.py`: rendered-frame contact sheet.
 - `tools/mix.py`: voice-relative music/SFX level matching and peak control.
-- `tools/finish.sh`: final encode and freeze/black/loudness QA.
-- `example/soldier/story.js`: worked shot/camera/light/world/actor/effect timeline.
-- `example/soldier/audio.py`: procedural music and SFX stems for the example.
+- `tools/finish.sh`: encode and technical QA.
+- `example/soldier/story.js`: worked example of shots, camera, lighting, world, actors, and effects.
+- `example/soldier/audio.py`: procedural example music/SFX stems.
 
-## Concepts Skill3D adopts
+## Keep and improve
 
-1. **A staged workflow**: intake → source/script lock → timing → shot plan → assets → animation → preview → audio → render → QA.
-2. **Exact source timing**: audio duration and speech timing determine visual timing; the voice is not forced to fit a predetermined picture.
-3. **Shot-level planning**: every shot has frame range, action, camera, lighting, characters, props, effects, and audio cue.
-4. **Deterministic frame timeline**: scene state can be reproduced from frame number, allowing targeted rerenders.
-5. **Reusable systems**: shared character rigs, props, materials, sets, motion helpers, and lighting presets.
-6. **Visual review gates**: render stills at shot middles and transitions, make a contact sheet, inspect before full render.
-7. **Resumable rendering**: render in frame ranges and resume interrupted jobs.
-8. **Technical QA**: check black/frozen frames, output encoding, loudness, and file integrity.
-9. **Separate source and generated material**: keep voice recordings and user scripts intact; generated assets and outputs live separately.
-10. **Task visibility**: maintain a task list and tell the user what stage is active.
+1. Staged workflow with explicit gates.
+2. Script and source preservation.
+3. Audio-first timing and exact duration measurement.
+4. Shot table with frame ranges, staging, camera, light, actors, props, and audio cues.
+5. Deterministic frame/time evaluation for reproducible rerenders.
+6. Reusable characters, motion, materials, props, environments, and lighting.
+7. Procedural environment/material generation where appropriate.
+8. Preview renders, shot contact sheets, and review before full-quality output.
+9. Rendering in ranges with resume/checkpoint behavior.
+10. Separate dialogue, optional music/SFX, frame rendering, final mux, and QA.
+11. A worked example and project setup tools.
+12. Clear reporting of failures and incomplete stages.
 
-## Concepts Skill3D intentionally does not copy
+## Replace, do not copy
 
-The source kit is explicitly a hybrid **2D stickman characters + 3D cartoon environment** pipeline. Its main cast is drawn as transparent 2D canvas cards. Skill3D's requirement is full 3D characters, so it must not use:
-- `stickman.js` as the final character system.
-- `roman.js` as the final character system.
-- Flat billboard cards as substitutes for 3D bodies.
-- The source kit's fixed 1080×1920 / 30 fps defaults for every project.
+The original kit is a hybrid 3D environment plus 2D drawn character-card pipeline. Skill3D is full 3D:
+- Do not use `stickman.js` or `roman.js` as the final character renderer.
+- Do not use flat billboards or 2D sprites in place of 3D character models.
+- Replace the Three.js/Playwright final character path with Blender geometry, armatures, facial controls, animation, and Blender rendering.
+- Preserve useful camera, motion, deterministic timeline, contact-sheet, timing, and QA concepts.
+- Keep Three.js only as an optional separate previs tool if it provides value; it is not the final renderer.
 
-The source kit's renderer is Three.js/Playwright. Skill3D uses Blender as the primary full-3D production environment. Reuse the workflow principles, not an incompatible character representation.
+## Skill3D-specific additions
 
-## Audio policy difference
+- Full-body low-poly medium-detail character modeling and reusable rigs.
+- Character identity sheets, turntables, expressions, and outfit continuity.
+- Props with correct pivots, articulated parts, and interaction states.
+- Modular full-3D environments.
+- Facial shape keys/controls and audio-driven viseme tracks.
+- Blender batch rendering, frame-range resume, and render logs.
+- Technical validation of MP4 plus human inspection of visual quality and lip-sync.
 
-The reference kit includes optional generated music/SFX and a voice-relative mix script. Skill3D does not generate or replace dialogue audio. Music and SFX are omitted unless the user supplies them or explicitly approves adding them. Original dialogue recordings remain authoritative.
+## Source audio rule
 
-## Design conclusion
-
-Skill3D is a full-3D expansion inspired by the source kit's production discipline, not a rename or blind copy of its 2D character engine.
+The reference kit can generate example audio/music. Skill3D does not generate or replace dialogue. The user's dialogue audio and script are locked inputs. Music/SFX are not added unless supplied or explicitly approved.
