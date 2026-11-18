@@ -229,7 +229,7 @@ The original audio controls the delivery and timing. The dialogue text controls 
 1. Inspect every audio file using `python skill3d/tools/audio_probe.py <files...>`.
 2. Map clips to speakers and scenes. Ask only if mapping is ambiguous.
 3. Prefer phoneme-level timing with the Rhubarb Lip Sync CLI when installed. For example: `rhubarb -r phonetic -f json -d dialogue.txt -o rhubarb.json voice.wav`. Use the supplied dialogue text file so recognition can be guided by the exact words.
-4. Convert Rhubarb output with `python skill3d/tools/rhubarb_to_visemes.py rhubarb.json --out production/visemes.json --fps 24`, then apply it in Blender with `python skill3d/tools/blender/apply_visemes.py`.
+4. Convert Rhubarb output with `python skill3d/tools/rhubarb_to_visemes.py rhubarb.json --out production/visemes.json --fps 24`, then apply and save it in the character .blend with `blender -b assets/characters/character.blend --python skill3d/tools/blender/apply_visemes.py -- --json production/visemes.json`.
 5. If Rhubarb is unavailable, use `python skill3d/tools/audio_timing.py <audio-file> <dialogue-script> --out production/audio-timing` for word/phrase timing only. This fallback is approximate and is not phoneme recognition. Review the JSON against the original audio and manually refine mouth cues before claiming sync.
 6. Convert timing to frames using project FPS.
 7. Create viseme events from the actual recording.
