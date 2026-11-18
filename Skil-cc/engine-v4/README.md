@@ -1,17 +1,21 @@
-# Skil-cc Full 3D Studio V4
+# Skil-cc Engine V4 — Full 3D Previsualization
 
-Browser-based 3D previs and blocking tool built with Three.js.
+Three.js browser-based 3D previs/blocking prototype. It is one component of the repository-driven 5–10 minute film pipeline.
 
 ## Run
-Serve the repository root with: python -m http.server 8000
-Open http://localhost:8000/Skil-cc/engine-v4/
+From repository root:
+```bash
+python -m http.server 8000
+```
+Open `http://localhost:8000/Skil-cc/engine-v4/`.
 
-## Capabilities
-- Real 3D scene, orbit camera and lighting.
-- Procedural stylized 3D character placeholder with volumetric head, torso, limbs, hair, eyes and mitten hands.
-- 3D environment presets, reusable props and GLB/GLTF import.
-- Character transform keyframes on a 10-minute timeline.
-- Play, pause, scrub, project JSON import/export and PNG preview capture.
+## Current features
+- Real 3D viewport, orbit camera, lights and shadows.
+- Procedural stylized 3D character placeholder with modeled volumes and rounded mitten hands.
+- Environment presets for studio, village, city and room.
+- GLB/GLTF model import.
+- 10-minute transform-keyframe timeline and playback.
+- Project JSON import/export and PNG viewport capture.
 
-## Limits
-This is a previs/blocking starter, not a full DCC application. It does not provide mesh sculpting, automatic retopology, production-grade skinning/IK, lip sync, multi-character nonlinear editing, VFX simulation or MP4 rendering. Use Blender for final modeling, rigging, animation, lighting and rendering. See the parent Skill.md.
+## Production limits
+This is previs/blocking, not a full DCC. It does not yet provide production skeletal rigging, IK, detailed facial/lip-sync animation, physically simulated VFX, audio timeline, nonlinear editing or final MP4 rendering. Use Blender for final meshes, rigging, animation, VFX, lighting and rendering. Never claim the browser prototype rendered a finished film.
