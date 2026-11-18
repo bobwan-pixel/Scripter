@@ -49,16 +49,25 @@ Never claim modeling, rigging, lip-sync, animation, rendering, or QA succeeded u
 
 ## 2. Start of every production: duration choice
 
-Inspect the current project and all attached files first. If duration is not already selected, ask the user to choose exactly one:
-- **30–60 seconds**
-- **1–5 minutes**
-- **5–10 minutes**
+Inspect the current project and attached files before asking anything. If the duration has not already been selected, ask this exact question and show only these three choices:
 
-Do not ask again if the user has already chosen for this production.
+**"Mau durasi animasinya berapa?"**
+1. **30–60 detik**
+2. **1–5 menit**
+3. **5–10 menit**
 
-After selection, check whether the three source inputs exist. Ask only for missing items. Do not ask the user to re-upload files already present in the workspace.
+After the user chooses, inspect the workspace for the three locked source inputs:
+- script animasi,
+- naskah dialog,
+- audio dialog asli.
 
-The selected duration is a target range, not permission to alter the source. Measure the actual dialogue audio and estimate the total picture runtime from the supplied script. If the source material cannot fit naturally, explain the measured conflict and ask for a different duration or corrected source. Never force it.
+If one or more are missing, ask only for the missing file(s), naming each clearly. Never ask for a file already attached or present in the project. If all three exist, do not ask the user to repeat or confirm them.
+
+Character/reference photos are optional. If provided, use them to match visible design details. If none are provided, derive character appearance from the supplied script and ask only when a key visual fact cannot reasonably be inferred. Do not block production over optional references.
+
+Default technical delivery is 16:9, 1920×1080, 24 fps, MP4 H.264 unless the user or source specifies otherwise. Do not ask about routine technical defaults. Ask a concise clarification only when the source files conflict, a speaker cannot be identified, or an essential visual decision is genuinely ambiguous.
+
+The selected duration is a target range, not permission to alter the source. Measure the actual dialogue audio and estimate picture runtime from the supplied script. If the source material cannot fit naturally, explain the measured conflict and ask for a different duration or corrected source. Never force it.
 
 ## 3. Project setup and source protection
 
@@ -217,15 +226,17 @@ Use purposeful shot sizes: wide for geography, medium for interaction, close-up 
 
 The original audio controls the delivery and timing. The dialogue text controls the exact wording and speaker reference.
 
-1. Inspect every audio file using `python skill3d/tools/audio_probe.py <files...>`. Generate a timing draft with `python skill3d/tools/audio_timing.py <audio-file> <dialogue-script> --out production/audio-timing`.
+1. Inspect every audio file using `python skill3d/tools/audio_probe.py <files...>`.
 2. Map clips to speakers and scenes. Ask only if mapping is ambiguous.
-3. Run `python skill3d/tools/audio_timing.py <audio-file> <dialogue-script> --out production/audio-timing` to generate word/phrase timing. It uses optional Whisper word timestamps or approximate silence + phrase alignment. Review the JSON against the original audio; mark approximate sections. Otherwise detect speech/silence segments and align the supplied phrases; mark uncertain sections.
+3. Prefer phoneme-level timing with the Rhubarb Lip Sync CLI when installed. For example: `rhubarb -r phonetic -f json -d dialogue.txt -o rhubarb.json voice.wav`. Use the supplied dialogue text file so recognition can be guided by the exact words.
+4. Convert Rhubarb output with `python skill3d/tools/rhubarb_to_visemes.py rhubarb.json --out production/visemes.json --fps 24`, then apply it in Blender with `python skill3d/tools/blender/apply_visemes.py`.
+5. If Rhubarb is unavailable, use `python skill3d/tools/audio_timing.py <audio-file> <dialogue-script> --out production/audio-timing` for word/phrase timing only. This fallback is approximate and is not phoneme recognition. Review the JSON against the original audio and manually refine mouth cues before claiming sync.
 4. Convert timing to frames using project FPS.
 5. Create viseme events from the actual recording.
 6. Apply events to Blender shape keys/facial controls. The included helper `tools/blender/apply_visemes.py` expects a JSON event track and a mouth mesh with compatible shape keys.
 7. Review the rendered face while listening to the original recording.
 
-Use at least REST, MBP, FV, A, E/I, O/U shapes. Blend jaw movement with lip shapes. A jaw flap alone is not adequate. Keep the correct character speaking; listeners must not mouth another speaker's line.
+Use at least REST, MBP, FV, A, E/I, O/U, and L_TH shapes where supported. Rhubarb mouth-cue mapping is an initial approximation; manually refine timing, coarticulation, jaw movement, and facial expression. A jaw flap alone is not adequate. Keep the correct character speaking; listeners must not mouth another speaker's line.
 
 If automatic phoneme recognition is unavailable, build an approximate phrase/word-level track from the source text and audio timing, then disclose the approximation. Never claim perfect lip-sync without review.
 
