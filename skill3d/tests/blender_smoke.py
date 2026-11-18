@@ -28,7 +28,7 @@ def main():
         animcheck="import bpy; k=bpy.data.objects['SK3D_Mouth'].data.shape_keys; assert k.animation_data and k.animation_data.action, 'viseme action missing'; print('VISEME_ACTION_OK')"
         run([blender,"-b",str(character),"--python-expr",animcheck],"inspect lip-sync keyframes")
         run([blender,"-b","--python",str(ROOT/"tools/blender/build_modern_ruins_blockout.py"),"--","--out",str(env),"--seed","19"],"generate modern ruined-street blockout")
-        setup="import bpy; s=bpy.context.scene; s.render.resolution_x=320; s.render.resolution_y=180; s.render.resolution_percentage=100; s.render.fps=24; s.frame_start=1; s.frame_end=24; s.render.engine='BLENDER_WORKBENCH'; s.display.shading.light='STUDIO'; print('ENV_CAMERA',bool(s.camera),'ENGINE',s.render.engine)"
+        setup="import bpy; s=bpy.context.scene; s.render.resolution_x=320; s.render.resolution_y=180; s.render.resolution_percentage=100; s.render.fps=24; s.frame_start=1; s.frame_end=24; s.render.engine='BLENDER_WORKBENCH'; s.display.shading.light='STUDIO'; bpy.ops.wm.save_as_mainfile(filepath=bpy.data.filepath); print('ENV_CAMERA',bool(s.camera),'ENGINE',s.render.engine)"
         run([blender,"-b",str(env),"--python-expr",setup],"configure tiny render")
         prefix=str(d/"frames"/"frame_")
         run(["python",str(ROOT/"tools/render_range.py"),str(env),"--blender",blender,"--start","1","--end","24","--chunk","12","--output",prefix,"--log-dir",str(d/"render-logs")],"render frames in chunks")
