@@ -2,7 +2,7 @@ name: Skill3D checks
 
 on:
   push:
-    branches: [cc-v4-full3d]
+    branches: [skill3d-standalone]
     paths:
       - "skill3d/**"
       - ".github/workflows/skill3d-checks.yml"
