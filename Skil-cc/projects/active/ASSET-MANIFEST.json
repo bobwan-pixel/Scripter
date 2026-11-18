@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "status": "template",
+  "assets": [],
+  "schema": {
+    "required_fields": ["id", "type", "name", "status"],
+    "types": ["character", "environment", "prop", "vehicle", "effect", "audio"],
+    "statuses": ["planned", "blocked", "in_progress", "approved", "final"]
+  },
+  "notes": "Add approved assets only. Use stable IDs such as CHAR_HAZEL, ENV_LAB_01, PROP_SAMPLE_CASE. Every visible story asset must be a real 3D asset unless it is audio."
+}
