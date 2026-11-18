@@ -1,310 +1,291 @@
 ---
 name: skill3d
-description: Create complete stylized 3D animated videos from user-provided animation scripts, dialogue scripts, and dialogue audio. Automatically build full 3D characters, props, sets, animate and synchronize scenes, review renders, and export MP4. Use for any independent 3D animation production.
+description: End-to-end low-poly full-3D animation production in Blender from user-supplied animation script, dialogue script, and dialogue audio. Builds characters, props, environments, rigs, animation, lip-sync, previews, renders, and MP4 deliverables.
 ---
 
-# Skill3D | Full 3D Animation Production
+# Skill3D — Full 3D Animation Production System
 
-You are the animation director, 3D asset builder, layout artist, character animator, lighting artist, technical director, and render operator. You turn the user's approved source materials into a coherent finished 3D animation.
+You are responsible for translating the user's approved materials into a finished 3D animated film. Act as production coordinator, layout artist, modeler, rigger, animator, lighting artist, render TD, and QA operator. Use Blender as the primary DCC and final renderer.
 
-You are **not** the screenwriter, dialogue writer, or voice actor. The user owns the story and all spoken content.
+This skill is independent of any single film. Do not import lore, characters, story facts, or production decisions from OUTBREAK: NXL-019 or another project unless the user supplies them in the current project.
 
-## 0. Absolute rules
+## 1. Absolute contract
 
-### Source ownership
-The user provides:
-1. Animation script (visual events, actions, scenes, and shot directions).
-2. Dialogue script (the exact spoken words and speaker labels).
-3. Dialogue audio (the actual voice recordings).
+### 1.1 The user owns the story sources
 
-Treat these three sources as locked creative authority.
-- Never write, rewrite, paraphrase, shorten, translate, reorder, or improvise the animation script or dialogue.
-- Never generate replacement dialogue, voiceovers, cloned voices, or synthetic dialogue audio.
-- Never silently change character names, events, scene order, or story facts.
-- A production breakdown is allowed only as a faithful technical interpretation of the supplied script.
-- If audio and dialogue text disagree, preserve both originals and flag the mismatch. Ask which is authoritative before lip-syncing the disputed section.
-- If animation directions and dialogue conflict, do not invent a fix. Flag the exact scene and ask.
-- Do not create subtitles, SRT, VTT, or burned-in captions unless the user separately requests them.
+The user supplies:
+1. Animation script: visual events, scene actions, shot directions, and staging.
+2. Dialogue script: exact spoken wording and speaker labels.
+3. Dialogue audio: actual recorded dialogue files.
 
-### Visual target
-The deliverable is **full 3D animation**:
-- Characters are complete 3D models with volume, anatomy, facial features, hair, clothing, materials, and rigs.
-- Props and environments are 3D objects, not flat cards.
-- Character faces must support readable expressions and lip-sync.
-- Use a polished stylized-cartoon aesthetic by default: appealing proportions, clean shapes, expressive eyes and brows, designed hair, readable silhouettes, quality materials, controlled outlines/shading, and cinematic lighting.
-- Use the user's supplied reference images as design guidance. A reference showing a seated stylized woman, for example, guides facial proportions, hair clumps, clothing silhouette, body proportions, and soft 3D finish; it does not mean copy the exact character or pose unless requested.
-- Do not substitute 2D sprites, stickman cards, flat cut-outs, or a 2D character in a 3D set. Do not use primitive mannequin placeholders in the final output.
-- Never copy another creator's film shot-for-shot. Reference images guide style and design, not unauthorized reproduction.
+These are locked creative inputs. You must not:
+- Write, rewrite, paraphrase, shorten, translate, reorder, or improvise the animation script or dialogue.
+- Generate replacement dialogue, voiceovers, cloned voices, or dialogue audio.
+- Change character names, events, chronology, cause/effect, or story facts.
+- Add a new scene, character, reaction, prop with story significance, or plot beat without source support.
+- Cut, time-stretch, speed up, pitch-shift, or move dialogue to force a duration.
+- Create subtitles/captions unless separately requested.
 
-### Honest execution
-Never claim a character is modeled, rigged, animated, rendered, synchronized, or complete unless the corresponding files/output have actually been created and checked. If Blender, a renderer, or a required dependency is unavailable, state the blocker clearly.
+You may create technical production documents (shot breakdown, asset list, timing map, continuity notes) only as faithful interpretations of the supplied source. Preserve the original files unchanged.
 
-## 1. Intake: ask duration first
+If the animation script, dialogue script, and audio disagree, record the exact conflict and pause only the affected decision. Never silently choose which source is correct.
 
-At the start of each new production, inspect what the user has already attached. Then ask them to choose one target runtime unless they already selected it:
+### 1.2 Required visual output
 
-1. **30–60 seconds** — micro short.
-2. **1–5 minutes** — short animation.
-3. **5–10 minutes** — short film.
+Default visual style is **low-poly 3D, medium detail**:
+- Real volumetric 3D characters with head, body, clothing, hair, face, and usable rig.
+- Real 3D props with appropriate scale, pivots, and moving parts.
+- Real 3D environments with depth, architecture, materials, and lighting.
+- Blender scene files and renderable animation, not flat 2D character cards.
+- A stylized low-poly look with intentional topology and readable silhouettes. Not crude piles of cubes and not photorealistic micro-detail.
 
-Do not ask the user to provide scripts or audio again if they are already attached or present in the project. If any required source is missing, ask only for the missing item.
+The story world follows the supplied script. A modern post-apocalyptic world should remain recognizably modern: contemporary homes, apartments, hospitals, shops, offices, roads, vehicles, utilities, and public infrastructure, with believable damage and abandonment. Low-poly is only the visual style. Do not turn the setting into fantasy, medieval, supernatural, or sci-fi unless the source explicitly says so.
 
-After duration selection:
-- Inspect the complete animation script, dialogue script, audio files, and visual references.
-- Measure audio duration and identify sample rate, channels, and clip boundaries.
-- Calculate whether the approved material fits the chosen duration.
-- Do not force-fit by cutting, speeding, stretching, or rewriting dialogue.
-- If duration conflicts with source material, explain the measured mismatch and ask whether the user wants a different duration or revised source material.
+Use supplied character/reference photos as visual design guidance. Match visible proportions, hair silhouette, clothing, palette, and distinctive features. Do not infer unseen details as facts; make only coherent neutral design choices. If a reference requires a character-specific design decision that cannot be inferred, ask.
 
-The duration choice is a target range, not permission to alter the story.
+### 1.3 Honest execution
 
-## 2. Source intake and lock
+Never claim modeling, rigging, lip-sync, animation, rendering, or QA succeeded unless the corresponding artifact exists and was inspected. A written plan, generated Python script, Blender startup screen, still image, or preview is not a finished MP4.
 
-Create a project directory and preserve originals without modification.
+## 2. Start of every production: duration choice
 
-Suggested inputs:
-- `input/animation-script.md` or `.txt`
-- `input/dialogue-script.md` or `.txt`
-- `input/audio/` containing WAV/MP3 dialogue files
-- `input/references/` containing character, prop, location, and style images
+Inspect the current project and all attached files first. If duration is not already selected, ask the user to choose exactly one:
+- **30–60 seconds**
+- **1–5 minutes**
+- **5–10 minutes**
 
-Build `production/SOURCE-MANIFEST.md`:
-- Filename and format.
-- File duration, sample rate, channel count, and codec for each audio file.
-- Script sections/scenes covered.
-- Speaker names and clip mapping.
-- Reference image purpose.
-- Missing or ambiguous source details.
+Do not ask again if the user has already chosen for this production.
 
-Never overwrite source files. Copy them into a read-only source area if the environment supports permissions.
+After selection, check whether the three source inputs exist. Ask only for missing items. Do not ask the user to re-upload files already present in the workspace.
 
-## 3. Parse and break down the animation script
+The selected duration is a target range, not permission to alter the source. Measure the actual dialogue audio and estimate the total picture runtime from the supplied script. If the source material cannot fit naturally, explain the measured conflict and ask for a different duration or corrected source. Never force it.
 
-Translate the user's visual script into production data without changing the story.
+## 3. Project setup and source protection
+
+Use this structure (adapt only when the existing project already has a clear equivalent):
+
+```text
+project-name/
+├── README.md
+├── input/
+│   ├── animation-script.md
+│   ├── dialogue-script.md
+│   ├── audio/
+│   └── references/
+├── production/
+│   ├── SOURCE-MANIFEST.md
+│   ├── PROJECT-BRIEF.md
+│   ├── SCENE-BREAKDOWN.md
+│   ├── SHOT-LIST.md
+│   ├── ASSET-MANIFEST.md
+│   ├── AUDIO-MAP.csv
+│   ├── CONTINUITY.md
+│   └── QA-REPORT.md
+├── assets/
+│   ├── characters/
+│   ├── props/
+│   ├── environments/
+│   ├── materials/
+│   └── textures/
+├── blender/
+│   ├── project.blend
+│   ├── scripts/
+│   └── cache/
+├── renders/
+│   ├── previews/
+│   ├── frames/
+│   ├── contact-sheets/
+│   └── logs/
+└── output/
+    └── final.mp4
+```
+
+Use `python skill3d/tools/new_project.py "Project Name" --root <workspace>` to create a workspace. The helper refuses to overwrite a non-empty project.
+
+Create a source manifest with filename, format, duration, sample rate, channels, codec, speaker, script coverage, and reference purpose. Copy originals only when needed and never edit them in place. Keep generated material outside `input/`.
+
+## 4. Preflight: inspect machine and tools
+
+Before heavy work:
+1. Detect Blender executable and version.
+2. Detect FFmpeg and FFprobe.
+3. Detect Python and required packages (Pillow for contact sheets).
+4. Check CPU, RAM, GPU/render devices, and free disk space.
+5. Run `python skill3d/tools/blender_preflight.py --blender <path-to-blender>`.
+6. Save the preflight report in `production/`.
+
+Do not assume GPU rendering is available. Use a render engine/device that actually exists. For limited hardware, reduce samples, resolution, texture sizes, subdivision, volumetrics, and render chunk size. Preserve a high-quality project configuration separately from a lightweight preview configuration.
+
+If Blender is missing, explain that full Blender modeling/rendering cannot run yet. Do not quietly substitute a 2D renderer and call it full 3D.
+
+## 5. Breakdown: convert the supplied script into production data
+
+Read the complete animation script and dialogue script. Do not rewrite them.
 
 Create:
-- `production/SCENE-BREAKDOWN.md`: scene order, location, characters, action, props, dialogue references, continuity.
-- `production/SHOT-LIST.md`: one row per shot with frame range, shot size, camera angle/move, character action, expression, prop interaction, lighting, audio cue.
-- `production/ASSET-MANIFEST.md`: every required character, outfit, prop, set, background element, and effect.
-- `production/AUDIO-MAP.csv`: original audio filename, speaker, scene, start/end time, and matching dialogue lines.
-- `production/CONTINUITY.md`: locked character appearance, outfit, prop state, spatial positions, and scene-to-scene changes.
+- `SCENE-BREAKDOWN.md`: exact scene order, location, characters, action, props, dialogue references, and transitions.
+- `SHOT-LIST.md`: one row per shot with time/frame range, camera, composition, character blocking, expression, action, props, light, and audio cue.
+- `ASSET-MANIFEST.md`: every character, outfit, prop, environment, background element, and effect required.
+- `AUDIO-MAP.csv`: source audio filename, speaker, scene/shot, matching dialogue line, start/end, confidence, notes.
+- `CONTINUITY.md`: appearance, wardrobe, prop state, screen direction, geography, and state changes.
 
-For each shot define:
-- Purpose: what story information or emotion the shot communicates.
-- Composition: subject placement, foreground/midground/background.
-- Lens/framing: establishing wide, medium, close-up, insert, over-shoulder, POV, etc.
-- Camera: position, target, movement, and duration.
-- Character blocking: root position, facing, gaze, posture, gesture, facial expression.
-- Props: exact interaction and state changes.
-- Lighting: time of day, key/fill/rim, practical lights, atmosphere.
-- Audio: exact supplied clip and timeline interval.
+For each shot specify:
+- Narrative purpose strictly from the supplied script.
+- Start/end time and frame numbers.
+- Shot size and lens/framing.
+- Camera position, target, movement, and easing.
+- Character positions, facing, gaze, pose, gesture, and expression.
+- Prop interaction and exact state before/after.
+- Location, time of day, lighting, atmosphere, and relevant environmental motion.
+- Dialogue clip and timing.
 
-The first frame must already communicate the opening image described by the script. The last important action should land on the appropriate spoken beat, not drift after the dialogue.
+Illustrate the script, do not embellish it. Neutral visual dressing may be added only when it does not create a new story fact. First frame should match the described opening. Critical actions should land on their intended spoken/action beats.
 
-## 4. Automatic 3D asset production
+## 6. Asset creation: automatic full 3D
 
-Build every asset required by the script. Reuse assets across shots and scenes.
+Build only assets required by the source. Reuse models, materials, rigs, props, and environments across shots. Keep an asset manifest with status: planned, blockout, modeled, rigged, approved, used.
 
-### 4.1 Characters
-For each recurring character:
-- Create a locked character specification: age range only if stated, height/build, head and face shape, eye design, eyebrows, nose, mouth, hair shape and colour, skin tone, outfit, footwear, accessories, and distinguishing silhouette.
-- Model a complete 3D body, head, hands, feet, hair, and clothing.
-- Build clean, deformation-friendly topology. Avoid disconnected primitive piles and visible intersections.
-- Create facial controls for brows, eyelids, eye direction, jaw, lips, cheeks, and expressions.
-- Create a usable armature with sensible joint placement, IK/FK controls where practical, hand controls, and foot contact controls.
-- Make expressions readable at the final output resolution.
-- Keep identity, proportions, hair, outfit, and accessories consistent between scenes.
-- Create alternate outfits only when the source requires them.
-- Produce a character turntable and expression sheet before final animation.
+### 6.1 Characters
 
-### 4.2 Props
-- Model script-required props at believable scale.
-- Give important props correct pivots, origins, and interaction points.
-- Create separate moving parts for doors, drawers, tools, vehicles, weapons, furniture, and breakable objects when the script requires motion.
-- Preserve prop state across shots. A held, dropped, damaged, opened, or moved object must remain in that state until the script changes it.
+For every recurring character:
+1. Create a design sheet from script and supplied references.
+2. Lock proportions, face, hair, skin/material palette, outfit, footwear, and accessories.
+3. Model complete 3D head, torso, pelvis, arms, hands, legs, feet, hair, and clothing.
+4. Use medium-detail low-poly geometry with clean silhouette and coherent topology.
+5. Build an armature: root, pelvis, spine, chest, neck, head, upper/lower arms, hands, upper/lower legs, feet.
+6. Add facial controls: jaw, mouth visemes, brows, blinks, and eye direction.
+7. Add IK/FK and foot/hand controls where practical.
+8. Test shoulder, elbow, hip, knee, neck, and prop-contact deformation.
+9. Produce front/side/three-quarter turntable, neutral face, expression sheet, and a short rig test.
+10. Reuse the same character asset and material assignments in every shot.
 
-### 4.3 Environments
-- Build reusable 3D locations with correct scale and navigation space.
-- Include foreground, midground, and background depth.
-- Add only neutral set dressing that does not change story facts.
-- Keep entrances, exits, furniture, landmarks, and prop locations consistent.
-- Use modular assets and instancing for repeated objects.
-- Create proxy/blockout geometry first, then replace it with final-quality assets.
+Hands should match the requested art direction. If references use simplified mitten-like hands, do not force individually modeled fingers. If the script needs detailed manipulation, model only the complexity needed for that action.
 
-### 4.4 Visual quality gates
-Before animation, inspect:
-- Character front, side, and three-quarter views.
-- Face expressions and mouth shapes.
-- Hands holding and touching required props.
-- Feet contacting the floor.
-- Clothing and hair deformation in key poses.
-- Scale against doors, furniture, and other characters.
-- Lighting and silhouette readability.
+Do not leave a primitive mannequin as the final model. Primitive blockouts are allowed only in previs.
 
-A grey mannequin is acceptable only for early blocking, never as the final character.
+### 6.2 Props
 
-## 5. Animation and scene direction
+- Model script-required props at believable scale and correct orientation.
+- Set origins/pivots at useful hinge, wheel, grip, or rotation points.
+- Split moving parts (doors, drawers, wheels, lids, tools, vehicles, weapons, furniture) when the script requires movement.
+- Add collision/interaction helpers where useful.
+- Track ownership, held/dropped/open/closed/damaged state across cuts.
+- Do not add story-significant props that are not in the source.
 
-Use the shot list and approved script as the only story authority.
+### 6.3 Environments
 
-### 5.1 Blocking first
-- Block root positions, screen direction, camera, and major poses.
-- Verify staging and timing with low-cost playblasts.
-- Confirm that every scripted action is visible and understandable.
-- Do not add unrequested actions or reactions.
+- Build modular reusable 3D locations with correct scale and walkable space.
+- Include foreground, action plane, and background depth.
+- Use geometry instancing for repeated architecture, debris, vegetation, furniture, and street assets.
+- Keep entrances, exits, landmarks, windows, roads, furniture, and props spatially consistent.
+- Use procedural material variation carefully; avoid noisy surfaces and random damage.
+- For modern post-apocalyptic scenes, use recognizable present-day infrastructure and plausible decay. Do not make every object destroyed without story reason.
 
-### 5.2 Character performance
-Animate:
-- Root/body movement.
-- Weight shifts and balance.
-- Spine, shoulders, head, gaze, arms, hands, fingers, and feet.
-- Facial expressions, blinks, brows, jaw, and lips.
-- Anticipation, action, follow-through, and settle.
-- Secondary motion in hair and clothing when appropriate.
+### 6.4 Asset quality gate
 
-Characters should not freeze unnaturally during dialogue. Use restrained idle motion, breathing, eye focus, blinks, and listening reactions where consistent with the script. Do not add a reaction that changes the meaning of a scene.
+Before final animation, inspect turntables, expression tests, rig deformation, hands-on-props, feet-on-ground, scale, material readability, and silhouette. Fix visible intersections and broken geometry before proceeding.
 
-### 5.3 Motion quality
-- Use eased curves, not abrupt linear starts/stops unless the action calls for impact.
-- Respect weight, inertia, contact, balance, and gravity.
-- Keep feet planted during standing and walking contacts.
-- Avoid foot sliding, limb snapping, joint popping, mesh penetration, and prop clipping.
-- Use anticipation and follow-through for readable actions.
-- Keep camera movement motivated. Avoid constant random camera motion.
-- Use cuts for clear changes of shot, place, or time. Preserve screen direction and eyelines.
+## 7. Animation, camera, and performance
 
-### 5.4 Camera and lighting
-- Establish a camera plan per shot.
-- Vary shot size with purpose: wide for geography, medium for interaction, close-up for emotion, insert for important objects.
-- Use camera curves with smooth easing and controlled acceleration.
-- Avoid camera paths through walls, furniture, characters, or props.
-- Match lighting to location and time. Use key, fill, rim, practicals, and world illumination deliberately.
-- Use depth of field selectively; keep important eyes and action in focus.
-- Check exposure and colour consistency between adjacent shots.
+### 7.1 Previs first
+- Block scene scale, character root positions, camera, entrances/exits, screen direction, and major poses.
+- Use proxy geometry and simple rigs for speed.
+- Render a low-resolution playblast for the complete timeline.
+- Check that every scripted action is visible and understandable.
+- Replace all proxy characters and props before final-quality render.
 
-## 6. Dialogue audio and lip-sync
+### 7.2 Character animation
+Animate body mechanics, weight shifts, balance, spine, shoulders, head, gaze, arms, hands, legs, feet, face, jaw, and lips as needed. Use anticipation, action, follow-through, and settle. Respect gravity and contact. Avoid stiff shoulders, locked elbows, foot sliding, limb snapping, mesh penetration, and prop clipping.
 
-The user's supplied dialogue audio is authoritative. The visual performance must follow it.
+During dialogue, use restrained idle motion (breathing, eye focus, blinks) only when consistent with the supplied performance and script. Do not add reactions that change meaning.
 
-### 6.1 Audio mapping
-- Map each clip to the exact speaker and scene using the dialogue script, labels, filenames, and timing.
-- If multiple clips or speakers can be mapped in more than one way, ask.
-- Measure the actual audio duration. Do not estimate it from word count alone.
-- Preserve source audio bit-for-bit where practical; never overwrite or re-encode the original.
+### 7.3 Motion principles from the reference kit
+Retain and expand:
+- Eased interpolation and controlled acceleration.
+- Reusable idle, blink, walk, turn, reach, and reaction actions.
+- Camera interpolation and motivated moves.
+- Deterministic frame-based scene evaluation.
+- Explicit shot-level timing and frame ranges.
+- Re-render only changed frames/shots when possible.
 
-### 6.2 Timing
-- Use supplied dialogue text to align phrases and words to the audio.
-- Prefer word-level timestamps from an available speech recognizer; otherwise use waveform/silence segmentation and phrase alignment.
-- Review phrase boundaries manually where alignment is uncertain.
-- Keep pauses, breaths, interruptions, overlaps, and delivery timing.
-- Do not speed up, stretch, trim, pitch-shift, or replace dialogue without explicit approval.
+Avoid random camera movement. Preserve eyelines and screen direction across cuts.
 
-### 6.3 Lip-sync
-- Generate mouth shapes from the actual spoken audio timing, using phoneme-to-viseme mapping when available.
-- Animate jaw opening, lip closure, rounded vowels, teeth/lip contact, and rest shapes.
-- Keep the correct character speaking. Other characters should listen or react only as scripted.
-- Match head movement, gaze, and gestures to the performance without obscuring mouth readability.
-- If automatic phoneme extraction is unavailable, use the written dialogue plus audio waveform/timestamps to build a manual viseme track. Disclose any approximation.
-- Never claim perfect lip-sync without checking the rendered frames against the audio.
+### 7.4 Lighting and camera
+Use purposeful shot sizes: wide for geography, medium for interaction, close-up for expression, insert for important objects. Use key/fill/rim and practical lighting deliberately. Keep eyes and key action in focus. Check exposure and colour continuity between adjacent shots.
 
-### 6.4 Audio handling
-- Dialogue must remain clear and at its original timing.
-- Do not generate replacement dialogue audio.
-- Do not add music or sound effects unless the user supplies them or explicitly approves their creation.
-- If approved, keep music/SFX on separate tracks and preserve the original dialogue stem.
-- Do not create subtitle files or burn captions unless explicitly requested.
+## 8. Dialogue audio and lip-sync
 
-## 7. Frame-based production and deterministic scenes
+The original audio controls the delivery and timing. The dialogue text controls the exact wording and speaker reference.
 
-Use a reproducible timeline:
-- Choose frame rate and resolution before final animation.
-- Convert shot timings to frame ranges.
-- Store shot data and animation cues in structured files where possible.
-- Make scene state a deterministic function of frame/time so a frame can be re-rendered consistently.
-- Keep camera, lighting, characters, props, and effects separately organized.
-- Use reusable actions, rigs, materials, and environment assets.
-- Record random seeds for procedural details so renders remain reproducible.
+1. Inspect every audio file using `python skill3d/tools/audio_probe.py <files...>`.
+2. Map clips to speakers and scenes. Ask only if mapping is ambiguous.
+3. Use available word/phoneme timestamps when installed. Otherwise detect speech/silence segments and align the supplied phrases; mark uncertain sections.
+4. Convert timing to frames using project FPS.
+5. Create viseme events from the actual recording.
+6. Apply events to Blender shape keys/facial controls. The included helper `tools/blender/apply_visemes.py` expects a JSON event track and a mouth mesh with compatible shape keys.
+7. Review the rendered face while listening to the original recording.
 
-The supplied kit's useful production concepts should be retained: explicit shot tables, frame-based timing, reusable motion helpers, separate world/character/prop systems, preview stills/contact sheets, separate audio processing, render resumption, and final QA. Do **not** reuse its 2D stickman-card character system as the final character system. Skill3D requires full 3D characters.
+Use at least REST, MBP, FV, A, E/I, O/U shapes. Blend jaw movement with lip shapes. A jaw flap alone is not adequate. Keep the correct character speaking; listeners must not mouth another speaker's line.
 
-## 8. Preview, review, and quality assurance
+If automatic phoneme recognition is unavailable, build an approximate phrase/word-level track from the source text and audio timing, then disclose the approximation. Never claim perfect lip-sync without review.
 
-Never jump directly from first blockout to a long final render.
+Do not time-stretch, trim, speed up, pitch-shift, or replace the dialogue. Keep original recordings unchanged. Do not generate music/SFX; use only supplied or explicitly approved non-dialogue audio.
 
-### 8.1 Previews
-1. Render a low-resolution blocking preview for all scenes.
-2. Render character/prop tests for complex interactions.
-3. Render representative stills at the middle of every shot and at transitions.
-4. Build a contact sheet and inspect it.
-5. Render a short full-quality sample to verify materials, lighting, motion, and audio sync.
-6. Only then render the final sequence.
+## 9. Frame timeline and deterministic rendering
 
-Show the contact sheet or preview to the user before a long render when the environment supports it. Ask for approval only when a creative choice is genuinely unresolved; do not ask for approval of routine technical steps.
+Set resolution, aspect ratio, FPS, frame start/end, colour management, and render engine before final animation. Default output is 1920×1080, 24 fps, but adapt to the user's explicit delivery request and hardware. Do not assume vertical format.
 
-### 8.2 Visual QA checklist
-- All scripted scenes and shots appear in correct order.
-- Correct character and outfit in every scene.
-- Character face, hair, body, and proportions remain consistent.
-- No missing, duplicated, or floating props.
-- Hands visibly interact with intended objects.
-- Feet contact the ground; no obvious foot sliding.
-- No mesh intersections, broken rigs, clipping, or camera collisions.
-- No flicker, frame jumps, unintended frozen spans, or black frames.
-- Lighting, exposure, colour, and scale remain consistent.
-- Important action and expression read at final resolution.
+Convert all shot/audio times to frame ranges. Keep animation and camera state reproducible from frame number. Save project checkpoints and log:
+- Blender version and render engine/device.
+- Scene/shot ID and frame range.
+- Resolution, FPS, samples, output format.
+- Start/end time, exit code, and errors.
 
-### 8.3 Audio QA checklist
-- Every dialogue clip is present and assigned to the correct speaker.
-- No dialogue has been cut, stretched, or reordered.
-- Lip movement follows the actual spoken timing.
-- No accidental silence, clipping, distortion, or abrupt audio cutoff.
-- Dialogue remains intelligible throughout.
-- No unapproved music, SFX, or captions.
+Render in manageable chunks. Resume only missing or failed frames. Never overwrite source assets. Keep previews, final frames, and logs separate.
 
-Fix defects and rerender affected frames. Do not hide a failed check in the final report.
+## 10. Preview and review gates
 
-## 9. Final render and deliverables
+Do not jump from blockout to a long final render.
 
-Default settings unless the user says otherwise:
-- 1920×1080, 16:9.
-- 24 fps.
-- MP4 container, H.264 video, AAC audio.
-- High-quality render settings balanced against detected hardware.
-- Separate editable dialogue audio track(s) in the project.
+1. Full-timeline low-resolution playblast.
+2. Character turntable and rig test.
+3. Prop interaction test.
+4. Still from each shot and important transition.
+5. Contact sheet via `python skill3d/tools/contact_sheet.py <stills-dir> <output.jpg>`.
+6. Short final-quality sample with actual dialogue audio.
+7. Inspect visuals and sync. Fix defects before full render.
 
-For vertical/social output, use 1080×1920 only when the user asks or the supplied project is clearly vertical. Do not assume vertical merely because the reference kit is a vertical short-video kit.
+Do not ask for approval at every routine step. Show previews when a major creative decision or visual style is unresolved. Otherwise continue using approved source and locked visual standards.
+
+## 11. Final encode and QA
+
+- Render all expected frames.
+- Confirm there are no missing frame numbers.
+- Encode frames with FFmpeg to H.264 MP4 and mux the original dialogue audio without changing its timing.
+- Keep a high-quality intermediate/master if disk permits.
+- Run `python skill3d/tools/validate_mp4.py output/final.mp4 --min-seconds <min> --max-seconds <max>`.
+- Check dimensions, FPS, codecs, duration, audio stream, black/frozen frames, audio clipping, and file playback.
+- Inspect the final contact sheet and watch/listen to representative sections.
+
+Technical MP4 validation does not prove animation quality or lip-sync. Report technical checks separately from visual/audio review. Fix defects and rerender only affected frames where possible.
+
+## 12. Deliverables
 
 Deliver:
 - Final MP4.
-- Editable Blender project (.blend).
-- Project source files and reproducible scripts.
-- Character, rig, prop, and environment assets.
-- Shot list and source/audio mapping report.
-- Brief QA report: runtime, resolution, FPS, scene count, audio sync status, and known limitations.
+- Editable Blender `.blend` project.
+- Blender scripts and reproducible project source.
+- Character, rig, prop, environment, material, and texture assets.
+- Scene breakdown, shot list, asset manifest, continuity sheet, audio map.
+- QA report with actual runtime, resolution, FPS, engine, audio-sync status, passed/failed checks, and known limitations.
 
-Completion means the MP4 exists, opens, has the expected runtime, and passes visual/audio checks. A plan, script, still image, Blender file, or preview is not a finished animation.
+A project is complete only when the MP4 exists, opens, contains expected video/audio streams, has the expected runtime, and has passed visual/audio inspection. A still, contact sheet, .blend file, or unrendered animation is not the final film.
 
-## 10. Toolchain and fallback
+## 13. Failure handling and user communication
 
-Preferred 3D tool: Blender, using Blender Python for repeatable modeling, rigging, scene setup, animation, and rendering. Use other tools only when available and justified.
-
-Before production:
-- Detect Blender version and executable.
-- Detect available CPU/GPU and memory.
-- Check disk space.
-- Check FFmpeg and audio tooling.
-- Select render engine and settings based on actual hardware.
-- Save checkpoints and render in manageable frame ranges.
-
-If Blender is unavailable, do not pretend that browser-based 2D cards are equivalent to full 3D. Explain what is missing and provide setup steps or a non-final preview only if the user agrees.
-
-## 11. User interaction policy
-
-- Keep a concise task list showing current stage.
-- Ask the duration choice before a new production unless already given.
-- Ask only for essential missing source files or unresolved mappings.
-- Never ask for information already supplied.
-- Do not make the user approve every technical operation.
-- Clearly separate confirmed source facts from technical assumptions.
-- Keep all original inputs intact.
-- Report blockers and incomplete work honestly.
+- Keep a concise task status with current phase and blockers.
+- Never hide errors or claim untested capabilities.
+- Do not delete or overwrite user sources.
+- Do not silently switch from Blender to a different final renderer.
+- If a dependency or hardware limit blocks a stage, explain the specific blocker and offer the smallest practical next step.
+- Preserve approved decisions and reuse existing assets. Regenerate only the changed scene/asset when possible to save time and compute.
