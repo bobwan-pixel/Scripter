@@ -1,37 +1,32 @@
 # Skil-cc Character Engine v3
 
-A lightweight browser-based 2D character preview/composer built with vanilla HTML Canvas and ES modules. No dependencies, account, API key, or generation credits required.
+Lightweight procedural 2D character studio using vanilla HTML Canvas and ES modules. No dependencies, API keys, paid generation credits, or external assets.
 
 ## Run
-Open `index.html` in a modern browser. If the browser blocks ES modules on file URLs, run a local static server from this directory:
-
+From this directory:
 ```bash
 python -m http.server 8000
 ```
+Open `http://localhost:8000`.
 
-Then open `http://localhost:8000`.
+## Rig System v2
+- Transform controls for head tilt and torso lean.
+- Independent shoulder rotation for both arms.
+- Separate elbow bend controls for both arms.
+- Independent thigh rotation and knee bend controls.
+- Capsule-style limb segments with visible elbow and knee pivots.
+- Optional automatic walk cycle with alternating arm and leg swing.
+- Mitten hands remain fingerless and rounded.
+- Rig data is normalized, exported, and restored through character JSON profiles.
 
-## Features
-- Original human-cartoon explainer character renderer.
+## Character tools
+- Four presets, six expressions, five poses.
 - Editable skin, hair, shirt, pants and background colors.
-- Four reusable starting presets: Bobwan Casual, Narrator, Student and Worker.
-- Adjustable character rig controls for head tilt, body lean, and independent arm rotation.
-- Rig values are validated, exported and restored with character JSON profiles.
-- Six facial expressions and five poses.
-- Rounded mitten hands with no individual fingers.
-- Subtle idle breathing and blinking with one shared animation loop.
-- Export character preview as PNG.
-- Export and import reusable character profiles as JSON.
-- Imported profiles are validated before being applied.
-- Responsive interface; no external assets or paid services.
+- PNG export and JSON profile import/export.
+- Responsive controls; no external libraries.
 
-## Reuse workflow
-1. Choose a preset and customize the character.
-2. Export the PNG for visual reference.
-3. Export the JSON profile to preserve colors, pose, expression and character name.
-4. In a later session, import that JSON to restore the same profile and continue editing.
-
-Keep each character's JSON profile alongside its reference PNG. This creates a small reusable character library without spending AI generation credits.
+## Reuse
+Export both PNG and JSON for each character. Keep them together as a reusable character library.
 
 ## Limits
-This is a procedural 2D preview/composition engine, not a full skeletal animation editor or AI video generator. The current rig uses transform pivots for the head, torso and arms. Legs and detailed joint deformation are still fixed-shape artwork, so this is an early 2D transform rig rather than a full skeletal editor. The engine is intentionally lightweight and does not modify the existing v2 ZIP archive.
+This is a lightweight procedural 2D preview rig, not a full inverse-kinematics or timeline animation editor. Elbow and knee controls rotate connected capsule segments; they do not deform a hand-drawn mesh. The walk cycle is a simple looping procedural motion. Browser visual QA is still required after pulling the update.
