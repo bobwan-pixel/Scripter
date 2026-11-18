@@ -1,27 +1,36 @@
-# Skil-cc V4 — Full 3D Animation Production
+# SKIL-CC — Full 3D Animation Production
 
-V4 changes the project from a 2D character preview tool into a full-3D animation production workflow.
+Skil-cc is a repository-driven production skill for original 3D animated films with a target runtime of 5–10 minutes.
 
-## What's new
-- Characters, clothing, hair, props, locations and effects are intended to be volumetric 3D.
-- Story workflow is built around cause/effect, character motivation, escalation, climax and resolution.
-- Production is organized as film → scenes → shots → animation clips.
-- Default target is a complete 10-minute film with frame-accurate runtime planning.
-- Includes a lightweight Three.js 3D previs/blocking studio in engine-v4.
-- Previous engine-v3 is preserved as a legacy 2D studio.
+## Claude Code integration
+- Repository root `CLAUDE.md` points Claude to the project.
+- `.claude/skills/skil-cc-animation/SKILL.md` exposes the `/skil-cc-animation` skill.
+- `Skil-cc/SKILL.md` contains the full production workflow.
+- `Skil-cc/projects/active/` stores screenplay, dialogue, characters, world rules and asset manifest.
+- `Skil-cc/scripts/` validates source and generates a timed production-plan JSON.
 
-## Files
-- Skill.md: production workflow and quality gates.
-- STYLE-GUIDE.md: 3D art direction and continuity.
-- PROMPT-TEMPLATES.md: model, rig, environment, prop, shot, animation and VFX briefs.
-- engine-v4/: browser 3D previs tool.
-- engine-v3/: legacy 2D character studio, retained for old projects.
+## Start with Claude Code
+Clone this repository, open the local repository root in Claude Code, then invoke:
+```text
+/skil-cc-animation
+```
+Or ask: "Baca seluruh naskah dan file proyek Skil-cc, validasi durasi, lalu susun production plan 3D tanpa mengubah dialog."
 
-## Start
-From the repository root run: python -m http.server 8000
-Open http://localhost:8000/Skil-cc/engine-v4/
+A GitHub URL alone is not an execution environment. Claude Code needs the repository checked out in its workspace (or a connected filesystem/tool that exposes the files).
 
-## Important
-The browser studio is for 3D layout, rough blocking, basic character keyframes, GLB import and project JSON. It is not a complete Blender replacement and does not render a final 10-minute MP4. Use Blender for production modeling, rigging, animation, lighting and final rendering.
+## Production target
+- 3D characters, hair, clothes, props, environments and effects.
+- Cinematic storytelling, camera, lighting, sound and continuity.
+- 5–10 minute final runtime.
+- Default 24 FPS; 7,200–14,400 frames.
+- Blender for final modeling, rigging, animation and rendering.
+- Three.js engine-v4 for lightweight browser previs and blocking only.
 
-The supplied Stickman World Short Kit V2 is used for shot planning, easing, camera motion and production discipline. Its 2D character-card implementation is deliberately not used in V4.
+## Directory map
+- `SKILL.md`: main production instructions.
+- `PROJECT-INDEX.md`: source file map and execution order.
+- `projects/active/`: film source of truth.
+- `references/`: production documentation.
+- `scripts/`: deterministic project utilities.
+- `engine-v4/`: 3D previs prototype.
+- `engine-v3/`: archived 2D studio, retained for old files.
