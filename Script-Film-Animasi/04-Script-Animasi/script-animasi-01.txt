@@ -1,0 +1,118 @@
+OUTBREAK: NXL-019
+SCRIPT ANIMASI
+DRAFT 01 - PEMBUKAAN DAN PERTEMUAN HAZEL–DEMIAN
+
+STATUS
+Draft pembukaan. Bukan naskah final keseluruhan cerita.
+Dialog dan animasi harus mengikuti file:
+03-Dialog/dialog-utama.txt
+
+ATURAN KONTINUITAS
+1. Hazel dan Demian sama-sama hadir secara fisik di dunia mimpi.
+2. Hazel tertidur setelah membaca buku virologi.
+3. Hazel terbangun di kota yang sudah mengalami kehancuran akibat wabah.
+4. Pertemuan Hazel dan Demian terjadi di dunia mimpi, bukan di dunia nyata.
+5. Hazel memiliki pengetahuan medis dasar sebagai mahasiswa kedokteran, tetapi belum memahami NXL-019 sepenuhnya.
+6. Demian berorientasi pada taktik dan keselamatan. Ia tidak mengetahui penjelasan medis yang belum diketahui Hazel.
+7. Jangan menampilkan Demian di dunia nyata pada bagian pembukaan.
+8. Jangan menetapkan detail biologis NXL-019 yang belum disetujui. Visual gejala dalam draft ini bersifat sementara.
+9. Zombie adalah mayat hidup dalam dunia mimpi, bukan manusia hidup yang sekadar sakit.
+10. Hindari aksi berlebihan tanpa sebab. Setiap gerakan harus punya motivasi, arah, dan konsekuensi.
+
+ARAH VISUAL
+Gaya sinematik, dramatis, atmosfer survival serius. Gunakan komposisi gambar yang jelas, ekspresi terbaca, gerakan tubuh masuk akal, dan jeda untuk membangun ketegangan. Jangan memenuhi layar dengan efek atau gerakan kamera yang tidak perlu.
+
+URUTAN ADEGAN
+
+ADEGAN 1 - KAMAR HAZEL, MALAM
+- Establishing shot kamar yang tenang.
+- Close-up buku virologi terbuka di meja.
+- Tampilkan catatan tulisan tangan dan nama NXL-019.
+- Hazel membaca, menggarisbawahi satu bagian, lalu berhenti berpikir.
+- Pena terlepas dari tangan.
+- Kamera perlahan mendekat ke wajah Hazel yang tertidur.
+- Transisi suara: dengung ruangan berubah menjadi angin dingin.
+
+ADEGAN 2 - JALAN KOTA, DUNIA MIMPI
+- Cut ke mata Hazel yang terbuka.
+- Hazel berada di tengah jalan kota yang sepi.
+- Wide shot memperlihatkan kendaraan terbengkalai, toko rusak, dan langit kelabu.
+- Sirene terdengar jauh lalu mati.
+- Hazel berdiri kebingungan dan mengamati lingkungan.
+- Demian masuk dari sisi frame, menjaga jarak dan memperhatikan jalan.
+- Jangan langsung memperlihatkan semua detail Demian. Perkenalkan melalui siluet dan gerak waspada.
+
+ADEGAN 3 - PERTEMUAN PERTAMA
+- Medium shot Hazel bertanya siapa Demian.
+- Over-the-shoulder shot dari belakang Demian ke arah Hazel.
+- Demian memberi peringatan agar Hazel tidak berdiri di tengah jalan.
+- Hazel menjaga jarak dan menunjukkan sikap curiga.
+- Demian tidak memaksa Hazel percaya. Ia fokus mengeluarkan mereka dari area terbuka.
+
+ADEGAN 4 - SESUATU DI BALIK MOBIL
+- Insert shot: tangan kotor muncul dari balik mobil.
+- Bunyi gesekan sepatu dan logam.
+- Sosok mayat hidup bergerak tidak stabil lalu berdiri.
+- Hazel refleks ingin mendekat untuk menolong.
+- Demian menahan Hazel dengan satu gerakan cepat.
+- Close-up ekspresi Hazel: bingung, prihatin, lalu takut.
+- Close-up Demian: fokus, mengukur jarak, mencari jalur keluar.
+- Sosok itu menerjang setelah mendeteksi mereka.
+
+ADEGAN 5 - PELARIAN
+- Demian menarik Hazel menjauh.
+- Tracking shot mengikuti mereka berlari di antara mobil.
+- Sisipkan shot kaki menghindari pecahan kaca dan puing.
+- Jangan membuat zombie muncul dari segala arah tanpa sumber suara atau posisi yang jelas.
+- Suara langkah dan benturan meningkat seiring jarak ancaman mendekat.
+- Mereka masuk ke bangunan kecil.
+
+ADEGAN 6 - BARRIKADE
+- Demian menutup pintu dan mendorong lemari untuk menahannya.
+- Hazel berusaha mengatur napas.
+- Pintu dihantam dari luar.
+- Kamera statis pada gagang pintu yang bergetar.
+- Close-up wajah Hazel saat menyadari kondisi di luar bukan situasi biasa.
+- Demian memberi isyarat diam.
+- Beri jeda hening setelah hantaman berhenti.
+
+ADEGAN 7 - PENGAMATAN
+- Hazel mengamati dari celah jendela tanpa membuka pintu.
+- Demian memeriksa jalur keluar belakang.
+- Dialog mereka memperlihatkan perbedaan keahlian: Hazel berpikir medis, Demian berpikir taktis.
+- Jangan membuat Hazel langsung mengetahui seluruh karakteristik virus.
+- Jangan membuat Demian tiba-tiba menjelaskan ilmu medis.
+
+ADEGAN 8 - ANCAMAN BARU
+- Sirene menyala lagi dari kejauhan.
+- Beberapa sosok di ujung jalan berhenti dan menghadap ke sumber suara.
+- Gunakan wide shot untuk memperlihatkan arah perhatian mereka.
+- Demian melihat perubahan itu dan memutuskan keluar lewat belakang.
+- Hazel bertanya apa yang ia lihat.
+- Demian tidak menjelaskan lebih jauh karena waktu terbatas.
+
+ADEGAN 9 - NAMA DAN PENUTUP
+- Mereka bersiap keluar melalui pintu belakang.
+- Hazel menanyakan nama Demian.
+- Demian menjawab singkat.
+- Hazel memperkenalkan diri.
+- Jangan jadikan momen ini romantis. Hubungan mereka baru dimulai dari situasi darurat.
+- Kamera mengikuti keduanya meninggalkan bangunan.
+- Akhiri dengan wide shot kota yang rusak dan suara ancaman dari kejauhan.
+- Fade out pada kalimat penutup narator tentang perjalanan delapan tahun.
+
+CATATAN AUDIO DAN EDITING
+- Dialog harus sesuai urutan dan isi di dialog-utama.txt.
+- Jangan menambahkan dialog spontan yang mengubah informasi cerita.
+- Sisakan ruang jeda untuk napas, langkah, benturan, sirene, dan ambience.
+- Musik jangan menutupi dialog.
+- Gunakan keheningan sebagai alat ketegangan, terutama sebelum sosok di balik mobil muncul dan setelah pintu dibarikade.
+
+DAFTAR YANG BELUM DIKUNCI
+- Desain final Hazel dan Demian.
+- Lokasi kota dan identitas wilayah.
+- Detail visual zombie.
+- Gejala dan tahapan NXL-019.
+- Sumber sirene dan kejadian yang membuat para zombie mengarah ke sana.
+- Durasi final tiap adegan.
+- Desain suara dan musik.
