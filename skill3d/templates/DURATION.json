@@ -1,0 +1,12 @@
+{
+  "duration_option": "30-60s",
+  "target_min_seconds": 30,
+  "target_max_seconds": 60,
+  "fps": 24,
+  "resolution": [1920, 1080],
+  "aspect_ratio": "16:9",
+  "visual_style": "low-poly",
+  "detail_level": "medium",
+  "world_setting": "follow-user-script",
+  "dialogue_audio_is_locked": true
+}
