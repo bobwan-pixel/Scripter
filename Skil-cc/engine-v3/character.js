@@ -53,22 +53,22 @@ function drawArm(ctx,side,c,rig,pose,swing=0){
  segment(ctx,elbow,wrist,25,c.skin);
  mitten(ctx,wrist.x,wrist.y+8,forearmAngle*Math.PI/180,c.skin,.95);
 }
-function drawLeg(ctx,side,c,rig,swing=0){
+function drawLeg(ctx,side,c,rig,swing=0,pose="stand"){
  const left=side==="left",hip={x:left?272:328,y:548};
- const thighAngle=(left?-5:5)+(left?rig.leftLeg:rig.rightLeg)+swing;
- const knee=point(hip.x,hip.y,94,thighAngle);
+ const thighAngle=(pose==="sit"?(left?-45:45):(left?-5:5))+(left?rig.leftLeg:rig.rightLeg)+swing;
+ const knee=point(hip.x,hip.y,pose==="sit"?88:94,thighAngle);
  const bend=left?rig.leftKnee:rig.rightKnee;
- const shinAngle=thighAngle+(left?-bend:bend);
- const ankle=point(knee.x,knee.y,96,shinAngle);
+ const shinAngle=pose==="sit"?(left?45:-45)+(left?bend:-bend):thighAngle+(left?-bend:bend);
+ const ankle=point(knee.x,knee.y,pose==="sit"?88:96,shinAngle);
  segment(ctx,hip,knee,43,c.pants);
  joint(ctx,knee,19,c.pants);
  segment(ctx,knee,ankle,35,c.pants);
  ellipse(ctx,ankle.x+(left?-15:15),ankle.y+8,37,18,"#4b4546",left?-.08:.08);
 }
 function drawBody(ctx,c,pose,rig,motion){
- const swing=motion?.walk?Math.sin((motion.time||0)/155)*24:0;
- drawLeg(ctx,"left",c,rig,swing);
- drawLeg(ctx,"right",c,rig,-swing);
+ const swing=pose==="sit"?0:(motion?.walk?Math.sin((motion.time||0)/155)*24:0);
+ drawLeg(ctx,"left",c,rig,swing,pose);
+ drawLeg(ctx,"right",c,rig,-swing,pose);
  ctx.save();ctx.translate(300,430);ctx.rotate((rig.bodyLean||0)*Math.PI/180);ctx.translate(-300,-430);
  ctx.beginPath();ctx.moveTo(245,365);ctx.quadraticCurveTo(300,345,355,365);ctx.lineTo(385,535);ctx.quadraticCurveTo(300,565,215,535);ctx.closePath();fill(ctx,c.outfit);stroke(ctx,"#493b38",5);
  ctx.beginPath();ctx.moveTo(300,375);ctx.lineTo(300,535);ctx.quadraticCurveTo(260,540,232,526);ctx.quadraticCurveTo(258,440,300,375);fill(ctx,mix(c.outfit,.18));
